@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>From MDN Site</title>
+  </head>
+  <body>
+    <div class="output_embed">
+      <p>https://developer.mozilla.org/en-US/docs/Web/HTML/Element/embed</p>
+      <!-- <embed
+        type="video/webm"
+        src="media/flower.mp4"
+        width="250"
+        height="200"
+      /> -->
+    </div>
+    <div class="output_video">
+      <p>https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video</p>
+      <!-- Using multiple sources as fallbacks for a video tag -->
+      <!-- 'Elephants Dream' by Orange Open Movie Project Studio, licensed under CC-3.0, hosted by archive.org -->
+      <!-- Poster hosted by Wikimedia -->
+      <video
+        width="620"
+        controls
+        poster="https://upload.wikimedia.org/wikipedia/commons/e/e8/Elephants_Dream_s5_both.jpg"
+      >
+        <source
+          src="https://archive.org/download/ElephantsDream/ed_hd.ogv"
+          type="video/ogg"
+        />
+        <source
+          src="https://archive.org/download/ElephantsDream/ed_hd.avi"
+          type="video/avi"
+        />
+        <source
+          src="https://archive.org/download/ElephantsDream/ed_1024_512kb.mp4"
+          type="video/mp4"
+        />
+        Your browser doesn't support HTML video tag.
+      </video>
+
+      <video
+        autoplay=""
+        controls=""
+        src="media/flower.mp4"
+        style="width: 250; height: 200px"
+      ></video>
+    </div>
+
+    <div class="output_iframe">
+      <p>https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe</p>
+      <iframe
+        id="inlineFrameExample"
+        title="Inline Frame Example"
+        width="300"
+        height="200"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&layer=mapnik"
+      >
+      </iframe>
+      <iframe
+        src="https://example.org"
+        title="iframe Example 1"
+        width="400"
+        height="300"
+      >
+      </iframe>
+    </div>
+
+    <div class="output_audio">
+      <p>https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio</p>
+      <figure>
+        <figcaption>Listen to the T-Rex:</figcaption>
+        <audio controls src="media/t-rex-roar.mp3">
+          Your browser does not support the
+          <code>audio</code> element.
+        </audio>
+      </figure>
+    </div>
+
+    <div class="output_canvas">
+      <p>https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas</p>
+      <canvas width="300" height="100">
+        An alternative text describing what your canvas displays.
+      </canvas>
+    </div>
+    <script>
+      const canvas = document.querySelector("canvas");
+      const ctx = canvas.getContext("2d");
+      ctx.fillStyle = "green";
+      ctx.fillRect(10, 10, 100, 100);
+    </script>
+
+    <div class="output_math">
+      <p>https://developer.mozilla.org/en-US/docs/Web/MathML/Element/math</p>
+      <p>
+        The infinite sum
+        <math display="block">
+          <mrow>
+            <munderover>
+              <mo>∑</mo>
+              <mrow>
+                <mi>n</mi>
+                <mo>=</mo>
+                <mn>1</mn>
+              </mrow>
+              <mrow>
+                <mo>+</mo>
+                <mn>∞</mn>
+              </mrow>
+            </munderover>
+            <mfrac>
+              <mn>1</mn>
+              <msup>
+                <mi>n</mi>
+                <mn>2</mn>
+              </msup>
+            </mfrac>
+          </mrow>
+        </math>
+        is equal to the real number
+        <math display="inline">
+          <mfrac>
+            <msup>
+              <mi>π</mi>
+              <mn>2</mn>
+            </msup>
+            <mn>6</mn>
+          </mfrac>
+        </math>
+        .
+      </p>
+    </div>
+
+    <div class="output_object">
+      <p>https://developer.mozilla.org/en-US/docs/Web/HTML/Element/object</p>
+      <object
+        type="application/pdf"
+        data="media/In-CC0.pdf"
+        width="400"
+        height="200"
+      ></object>
+    </div>
+
+    <div class="output_svg">
+      <p>https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg</p>
+      <svg
+        viewBox="0 0 300 100"
+        xmlns="http://www.w3.org/2000/svg"
+        stroke="red"
+        fill="grey"
+      >
+        <circle cx="50" cy="50" r="40" />
+        <circle cx="150" cy="50" r="4" />
+        <svg viewBox="0 0 10 10" x="200" width="100">
+          <circle cx="5" cy="5" r="4" />
+        </svg>
+      </svg>
+      <svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+        <!-- Some graphical objects to use -->
+        <defs>
+          <circle id="myCircle" cx="0" cy="0" r="5" />
+          <linearGradient id="myGradient" gradientTransform="rotate(90)">
+            <stop offset="20%" stop-color="gold" />
+            <stop offset="90%" stop-color="red" />
+          </linearGradient>
+        </defs>
+        <!-- using my graphical objects -->
+        <use x="5" y="5" href="#myCircle" fill="url('#myGradient')" />
+      </svg>
+      <svg viewBox="0 0 80 20" xmlns="http://www.w3.org/2000/svg">
+        <!-- Our symbol in its own coordinate system -->
+        <symbol id="myDot" width="10" height="10" viewBox="0 0 2 2">
+          <circle cx="1" cy="1" r="1" />
+        </symbol>
+        <!-- A grid to materialize our symbol positioning -->
+        <path
+          d="M0,10 h80 M10,0 v20 M25,0 v20 M40,0 v20 M55,0 v20 M70,0 v20"
+          fill="none"
+          stroke="pink"
+        />
+        <!-- All instances of our symbol -->
+        <use href="#myDot" x="5" y="5" style="opacity: 1" />
+        <use href="#myDot" x="20" y="5" style="opacity: 0.8" />
+        <use href="#myDot" x="35" y="5" style="opacity: 0.6" />
+        <use href="#myDot" x="50" y="5" style="opacity: 0.4" />
+        <use href="#myDot" x="65" y="5" style="opacity: 0.2" />
+      </svg>
+      <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+        <image href="media/mdn_logo_only_color.png" height="200" width="200" />
+      </svg>
+    </div>
+
+    <div class="output_image">
+      <p>https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img</p>
+      <img
+        class="fit-picture"
+        src="media/grapefruit-slice-332-332.jpg"
+        alt="Grapefruit slice atop a pile of other slices"
+      />
+      <img
+        src="media/clock-demo-200px.png"
+        alt="Clock"
+        srcset="
+          media/clock-demo-200px.png 200w,
+          media/clock-demo-400px.png 400w
+        "
+        sizes="(max-width: 600px) 200px, 50vw"
+      />
+    </div>
+
+    <div class="output_map">
+      <p>https://developer.mozilla.org/en-US/docs/Web/HTML/Element/map</p>
+      <map name="infographic">
+        <area
+          shape="poly"
+          coords="130,147,200,107,254,219,130,228"
+          href="https://developer.mozilla.org/docs/Web/HTML"
+          target="_blank"
+          alt="HTML"
+        />
+        <area
+          shape="poly"
+          coords="130,147,130,228,6,219,59,107"
+          href="https://developer.mozilla.org/docs/Web/CSS"
+          target="_blank"
+          alt="CSS"
+        />
+        <area
+          shape="poly"
+          coords="130,147,200,107,130,4,59,107"
+          href="https://developer.mozilla.org/docs/Web/JavaScript"
+          target="_blank"
+          alt="JavaScript"
+        />
+      </map>
+      <img
+        usemap="#infographic"
+        src="media/mdn-info2.png"
+        alt="MDN infographic"
+      />
+      <!-- Photo by Juliana e Mariana Amorim on Unsplash -->
+      <map name="primary">
+        <area
+          shape="circle"
+          coords="75,75,75"
+          href="https://developer.mozilla.org/docs/Web/JavaScript"
+          target="_blank"
+          alt="JavaScript"
+        />
+        <area
+          shape="circle"
+          coords="275,75,75"
+          href="https://developer.mozilla.org/docs/Web/CSS"
+          target="_blank"
+          alt="CSS"
+        />
+      </map>
+      <img
+        usemap="#primary"
+        src="media/parrots.jpg"
+        alt="350 x 150 picture of two parrots"
+      />
+    </div>
+
+    <div class="output_picture">
+      <p>https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture</p>
+      <!--Change the browser window width to see the image change.-->
+      <picture>
+        <source srcset="media/surfer-240-200.jpg" media="(min-width: 800px)" />
+        <img src="media/painted-hand-298-332.jpg" alt="" />
+      </picture>
+    </div>
+
+    <div class="output_track">
+      <p>https://developer.mozilla.org/en-US/docs/Web/HTML/Element/track</p>
+      <video controls src="media/friday.mp4">
+        <track default kind="subtitles" srclang="en" src="media/friday.vtt" />
+        Sorry, your browser doesn't support embedded videos.
+      </video>
+    </div>
+  </body>
+</html>
