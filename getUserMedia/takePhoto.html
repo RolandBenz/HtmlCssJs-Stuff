@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>example</title>
+    <link rel="stylesheet" type="text/css" href="takePhoto.css" media="screen" />
+    <script src="takePhoto.js"></script>
+  </head>
+
+  <body>   
+    <!-- Reference -->
+    <div>
+      Code from:
+      https://developer.mozilla.org/en-US/docs/Web/API/Media_Capture_and_Streams_API/Taking_still_photos
+      <br /> <br />
+    </div>
+    <!-- The whole app content-->
+    <div class="contentarea">
+      <!-- Titel and Intro -->
+      <h1>MDN - navigator.mediaDevices.getUserMedia(): Still photo capture demo</h1>
+      <p>
+        This example demonstrates how to set up a media stream using your
+        built-in webcam, fetch an image from that stream, and create a PNG using
+        that image.
+      </p>
+      <!-- Left part with live camera -->
+      <div class="camera">
+        <video id="video">Video stream not available.</video>
+        <button id="startbutton">Take photo</button>
+      </div>
+      <!-- Area for the takePhoto.js -->
+      <canvas id="canvas"> </canvas>
+      <!-- Right part for foto -->
+      <div class="output">
+        <img id="photo" alt="The screen capture will appear in this box." />
+      </div>  
+      <!-- Text at the bottom -->   
+      <p>
+        Visit our article
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API/Taking_still_photos"
+        >
+          Taking still photos with WebRTC</a
+        >
+        to learn more about the technologies used here.
+      </p>
+    </div>
+    <script></script>
+  </body>
+</html>
