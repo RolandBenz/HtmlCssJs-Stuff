@@ -1,0 +1,106 @@
+/* 
+References
+    https://developer.mozilla.org/en-US/docs/Web/CSS
+    https://developer.mozilla.org/en-US/docs/Web/CSS/Reference
+    https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics
+CSS Rulesets
+    Selector {Property: Value}
+Precedence 
+    Generally the last rule applied to a Selecor wins, 
+    thit is true within a CSS block and also within a CSS and an html file,
+    i.e., later imported css files in html files override prior ones 
+    finally an 'inside style' overrides subsequent ones
+Browser Developer Tools (F12): 
+    In Inspector Tab shows the rules for each element,
+    those applied and those overridden, with position (file, line)
+Measurement units:
+     %: Defines a measurement as a percentage relative to another value, typically an enclosing element.
+    px: Defines a measurement in screen pixels.
+    em 	A relative measurement for the size of a font in em spaces. If you assign a font to 12pt, each "em" unit would be 12pt; thus, 2em would be 24pt.
+Paths
+    Windows
+        Syntax  \  but "/" or r"/" can be used       
+        /       parent folder loaded into IDE, e.g. project folder, or in a terminal the root of a filesystem
+        ./      current directory
+                current directory
+        ../     parent directory
+        ../../  grandparent directory
+    Linux differences
+        Syntax  /
+        ~       user directory (root/home/user/)
+Properties List
+    https://developer.mozilla.org/en-US/docs/Web/CSS/Reference
+*/
+
+
+/*
+1. CSS Universal Selector
+    * { color: rgba(173, 59, 78, 0.847); }
+*/
+
+
+
+/*
+1. CSS Tag/Type Selectors
+    body { background: rgba(24, 52, 52, 0.783); }
+2. CSS Decendent Tag Selector: only p that lie inside div
+    div p { color: #64c014c9; }
+3. CSS Direct Child Tag Selector: only p that lie directly inside body
+    body > p { color: rgba(86, 135, 43, 0.644); }
+4. CSS General Sibling Combinator Tag Selector: only span after p sibling
+    p ~ span {color: red;}
+5. CSS Adjacent Sibling Combinator Tag Selector: only li directly after first li (pseudo class first-of-type)
+    li:first-of-type + li { color: red; }  
+6. CSS Descendant Combinator Tag Selector: li (subitems) that lie somewhere inside li (item)
+    li li { list-style-type: circle; }
+7. CSS Tag Grouping Selector: separate tags with commas
+    h3, h4, h5 { color: rgba(139, 100, 106, 0.952); }
+*/
+
+
+
+/*
+1. CSS Class Selectors
+    .iclass { color: rgb(255, 102, 0); }
+2. CSS Class Tag Selector: only h1 with iclass
+    h1.iclass { color: rgba(167, 44, 163, 0.886); }
+3. CSS Decendent Class Tag Selectors: only p that lie inside .iclass
+    .iclass p { color: rgba(44, 167, 101, 0.699); }
+4. CSS Class Grouping Selector: separate classes with commas
+    .iclass1, .iclass2 { color: rgb(204, 132, 84); }
+*/
+
+
+
+/*
+1. CSS Pseudo Class Selector: any button over which user's pointer is hovering
+   https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes
+    button:hover { color: blue; }
+2. CSS Pseudo Element Selector: only first line of every p
+   https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements
+    p::first-line { color: blue; text-transform: uppercase;
+}
+
+*/
+
+
+
+/*
+1. CSS ID Selectors
+    #iid { color: rgb(0, 255, 200); }
+2. CSS ID Tag Selectors: only h1 with iid
+    h1#iid { color: rgba(84, 114, 142, 0.916); }
+3. CSS Decendent ID Tag Selectors: only p that lie inside #iid
+    #iid p { color: rgba(41, 112, 179, 0.783); }
+4. CSS ID Grouping Selector: separate ids with commas
+    #iid1, #iid2 { color: rgba(96, 179, 41, 0.692); }
+*/
+
+
+
+/*
+1. CSS Attribute Selectors: only input tags with type element text
+    input[type = "text"] { color: #410404dd; }
+*/
+
+
