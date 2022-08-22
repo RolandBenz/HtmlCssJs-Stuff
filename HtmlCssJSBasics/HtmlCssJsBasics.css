@@ -1,0 +1,156 @@
+/* --------------------------------------------------------------------------------------------------------------------
+References
+    https://developer.mozilla.org/en-US/docs/Web/CSS
+    https://developer.mozilla.org/en-US/docs/Web/CSS/Reference
+    https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics
+CSS Rulesets
+    Selector {Property: Value}
+Precedence 
+    Generally the last rule applied to a Selecor wins, 
+    thit is true within a CSS block and also within a CSS and an html file,
+    i.e., later imported css files in html files override prior ones 
+    finally an 'inside style' overrides subsequent ones
+Browser Developer Tools (F12): 
+    In Inspector Tab shows the rules for each element,
+    those applied and those overridden, with position (file, line)
+Measurement units
+     %: Defines a measurement as a percentage relative to another value, typically an enclosing element.
+    px: Defines a measurement in screen pixels.
+    em: A relative measurement for the size of a font in em spaces. 
+        If you assign a font to 12pt, each "em" unit would be 12pt; thus, 2em would be 24pt.
+Paths
+    Windows
+        Syntax  \  but "/" or r"/" can be used       
+        /       parent folder loaded into IDE, e.g. project folder, or in a terminal the root of a filesystem
+        ./      current directory
+                current directory
+        ../     parent directory
+        ../../  grandparent directory
+    Linux differences
+        Syntax  /
+        ~       user directory (root/home/user/)
+Properties List
+    https://developer.mozilla.org/en-US/docs/Web/CSS/Reference
+Selectors
+    A Universal...
+      A1. CSS Universal Selector
+            * { color: rgba(173, 59, 78, 0.847); }
+    B Tag...
+      B1. CSS Tag/Type Selectors
+          body { background: rgba(24, 52, 52, 0.783); }
+      B2. CSS Decendent Tag Selector: only p that lie inside div
+          div p { color: #64c014c9; }
+      B3. CSS Direct Child Tag Selector: only p that lie directly inside body
+          body > p { color: rgba(86, 135, 43, 0.644); }
+      B4. CSS General Sibling Combinator Tag Selector: only span after p sibling
+          p ~ span {color: red;}
+      B5. CSS Adjacent Sibling Combinator Tag Selector: only li directly after first li (pseudo class first-of-type)
+          li:first-of-type + li { color: red; }  
+      B6. CSS Descendant Combinator Tag Selector: li (subitems) that lie somewhere inside li (item)
+          li li { list-style-type: circle; }
+      B7. CSS Tag Grouping Selector: separate tags with commas
+          h3, h4, h5 { color: rgba(139, 100, 106, 0.952); }
+    C Class ...
+      C1. CSS Class Selectors
+          .iclass { color: rgb(255, 102, 0); }
+      C2. CSS Class Tag Selector: only h1 with iclass
+          h1.iclass { color: rgba(167, 44, 163, 0.886); }
+      C3. CSS Decendent Class Tag Selectors: only p that lie inside .iclass
+          .iclass p { color: rgba(44, 167, 101, 0.699); }
+      C4. CSS Class Grouping Selector: separate classes with commas
+          .iclass1, .iclass2 { color: rgb(204, 132, 84); }
+    D Pseudo Class
+      D1. CSS Pseudo Class Selector: any button over which user's pointer is hovering
+        https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes
+          button:hover { color: blue; }
+      D2. CSS Pseudo Element Selector: only first line of every p
+        https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements
+          p::first-line { color: blue; text-transform: uppercase; }
+    E ID 
+      E1. CSS ID Selectors
+          #iid { color: rgb(0, 255, 200); }
+      E2. CSS ID Tag Selectors: only h1 with iid
+          h1#iid { color: rgba(84, 114, 142, 0.916); }
+      E3. CSS Decendent ID Tag Selectors: only p that lie inside #iid
+          #iid p { color: rgba(41, 112, 179, 0.783); }
+      E4. CSS ID Grouping Selector: separate ids with commas
+          #iid1, #iid2 { color: rgba(96, 179, 41, 0.692); }
+    F Attribute
+      F1. CSS Attribute Selectors: only input tags with type element text
+          input[type = "text"] { color: #410404dd; }
+--------------------------------------------------------------------------------------------------------------------*/
+
+
+
+/* 
+Elements...
+1. background color
+2. base font size, x pixels high
+3. use included Google fonts, with fallback values. 
+   The browser will select the first font in the list that is installed or that can be downloaded.
+   https://developer.mozilla.org/en-US/docs/Web/CSS/font-family
+*/
+html {
+  background-color: #00529f84;
+  font-size: 20px;
+  font-family: "Silkscreen", "Roboto", "Open Sans", sans-serif;
+}
+
+/*
+Element's...
+1. fixed margin
+    https://developer.mozilla.org/en-US/docs/Web/CSS/margin
+    margin: 1em;                all four sides
+    margin: 10px 3px 30px 5px;  top, right, bottom, left
+    margin: auto;               top and bottom 0 margin, Box is horizontally centered
+    margin: 5% auto;            vertical, horizontal 
+    margin: 2em auto;           top and bottom 2em margin, Box is horizontally centered
+2. fixed width
+3. fixed border
+4. padding
+    https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+5. background color
+*/
+body {
+  margin: 0 auto;
+  width: 500px;
+  border: 5px solid black;
+  padding: 0 20px 20px 20px;
+  background-color: #ff95008b;
+}
+
+h1 {
+  /*border: 1px solid black;*/
+  font-size: 60px;
+  text-align: center;
+  margin: 0;
+  padding: 20px 0;
+  color: #00539f;
+  text-shadow: 3px 3px 1px black;
+}
+
+/* 
+1. Images are inline elements, for the auto margin trick to work on this image, 
+   we must give it block-level behavior using display: block 
+    https://developer.mozilla.org/en-US/docs/Web/CSS/display
+    (Formally, the display property sets an element's inner and outer display types. 
+    The outer type sets an element's participation in flow layout; 
+    the inner type sets the layout of children.)
+*/
+img {
+    display: block;
+    margin: 0 auto;
+}  
+
+p {
+  /*border: 1px solid black;*/
+  color: rgb(0, 25, 83);
+  width: 500px;
+}
+
+p,
+li {
+  font-size: 16px;
+  line-height: 2;
+  letter-spacing: 1px;
+}
