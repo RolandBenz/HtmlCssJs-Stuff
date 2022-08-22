@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>HTML Elements - from MDN Site</title>
+    <!-- Fonts inclusion;
+    Choose from https://fonts.google.com/;
+    This code links your page to a style sheet that loads the Open Sans font family,
+    with your webpage and therefore don't have to be installed on a client computer.
+    But they still need to be chosen with font-family property in your CSS file. -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Silkscreen" rel="stylesheet"/>
+    <!-- CSS inclusion -->
+    <style type="text/css" media="all"> 
+      /* 
+      Elements...
+      1. background color
+      2. base font size, x pixels high
+      3. use included Google fonts, with fallback values. 
+        The browser will select the first font in the list that is installed or that can be downloaded.
+        https://developer.mozilla.org/en-US/docs/Web/CSS/font-family
+      */
+      html {
+        background-color: #00529f84;
+        font-family: "Roboto", "Open Sans", sans-serif;
+        font-size: 15px;
+      }
+      /*
+      Element's...
+      1. fixed margin
+          https://developer.mozilla.org/en-US/docs/Web/CSS/margin
+          margin: 1em;                all four sides
+          margin: 10px 3px 30px 5px;  top, right, bottom, left
+          margin: auto;               top and bottom 0 margin, Box is horizontally centered
+          margin: 5% auto;            vertical, horizontal 
+          margin: 2em auto;           top and bottom 2em margin, Box is horizontally centered
+      2. fixed width
+      3. fixed border
+      4. padding
+          https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+      5. background color
+      */
+      body {
+        margin: 0 auto;
+        width: 700px;
+        border: 5px solid black;
+        padding: 0 20px 20px 20px;
+        background-color: #ff95008b;
+      }
+      h1, h2 {
+        /*border: 1px solid black;*/
+        font-family: "Silkscreen";
+        font-size: 60px;
+        text-align: center;
+        margin: 0;
+        padding: 20px 0;
+        color: #00539f;
+        text-shadow: 3px 3px 1px black;
+      }
+      h1 + p { font-size: 10px; text-align: center; padding: 0px 0px 50px 0px; }
+      h2 { padding: 0; margin: 50px 0px 0px 0px; font-size: 40px; text-shadow: none}
+      h2 + p { font-size: 10px; text-align: center; padding: 0px 0px 10px 0px; }
+      .precode { font-size: 10px;  margin: 0 140px; color: rgb(33, 61, 0); }
+      /* 
+      1. Image, Video, etc. are inline elements. Tor the auto margin trick to work on this image, 
+         they must be given a block-level behavior using display: block 
+          https://developer.mozilla.org/en-US/docs/Web/CSS/display
+          (Formally, the display property sets an element's inner and outer display types. 
+          The outer type sets an element's participation in flow layout; 
+          the inner type sets the layout of children.)
+      */
+      .precode p { font-size: 10px; text-align: center; color: rgba(95, 21, 1, 0.795); }     
+      video { display: block; margin: 20px auto; }
+      iframe { display: block; margin: 20px auto; }
+      iframe + p { font-size: 10px; text-align: center; color: rgba(95, 21, 1, 0.795); }
+      audio { display: block; margin: 20px auto; }
+      figcaption { display: block; margin: 10px 160px 10px 160px; }
+      canvas { display: block; margin: 20px auto; }
+      object { display: block; margin: 20px auto; }
+      #output_math_p { display: block; margin: 10px 120px 10px 160px; color: #fdffc9; font-size: 30px; }
+      #output_svg_img { margin: 0 auto; width: 210px; height: 210px }
+      img { display: block; margin: 20px auto; }
+      img + p {font-size: 10px; text-align: center; color: rgba(95, 21, 1, 0.795); }
+      picture + p  {font-size: 10px; text-align: center; color: rgba(95, 21, 1, 0.795); }
+      video + p {font-size: 10px; text-align: center; color: rgba(95, 21, 1, 0.795); }
+    </style>
+  </head>
+
+  <body>
+    <h1>
+      Some HTML Elements in action.
+    </h1>
+    <p>
+      Reference: MSN website <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">
+        https://developer.mozilla.org/en-US/docs/Web/HTML/Element </a>
+    </p>
+
+    <div class="output_embed">
+      <h2> 1. Embed </h2>
+      <p> <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/embed">
+        https://developer.mozilla.org/en-US/docs/Web/HTML/Element/embed</a>
+      </p>
+      <div class="precode">
+        <pre>
+          <code>
+            < embed
+              type="video/webm"
+              src="media/flower.mp4"
+              width="250"
+              height="200"
+            />
+          </code>
+        </pre>
+        <p>Code does not work.</p>
+      </div>
+    </div>
+
+
+    
+    <div class="output_video">
+      <h2> 2. Video </h2>
+      <p> <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video">
+        https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video</a>
+      </p>
+      <div class="precode">
+        <pre>
+          <code>
+            < video
+              width="620"
+              controls
+              poster="https://upload.wikimedia.org/wikipedia/commons/e/
+                      e8/Elephants_Dream_s5_both.jpg"
+            >
+              < source
+                src="https://archive.org/download/ElephantsDream/ed_hd.ogv"
+                type="video/ogg"
+              />
+              < source
+                src="https://archive.org/download/ElephantsDream/ed_hd.avi"
+                type="video/avi"
+              />
+              < source
+                src="https://archive.org/download/ElephantsDream/ed_1024_512kb.mp4"
+                type="video/mp4"
+              />
+              Your browser doesn't support HTML video tag.
+            < / video>
+            < video
+              autoplay=""
+              controls=""
+              src="media/flower.mp4"
+              style="width: 250; height: 200px"
+            > < / video>        
+          </code>
+        </pre>
+      </div>
+      <!-- Using multiple sources as fallbacks for a video tag -->
+      <!-- 'Elephants Dream' by Orange Open Movie Project Studio, licensed under CC-3.0, hosted by archive.org -->
+      <!-- Poster hosted by Wikimedia -->
+      <video
+        width="620"
+        controls
+        poster="https://upload.wikimedia.org/wikipedia/commons/e/e8/Elephants_Dream_s5_both.jpg"
+      >
+        <source
+          src="https://archive.org/download/ElephantsDream/ed_hd.ogv"
+          type="video/ogg"
+        />
+        <source
+          src="https://archive.org/download/ElephantsDream/ed_hd.avi"
+          type="video/avi"
+        />
+        <source
+          src="https://archive.org/download/ElephantsDream/ed_1024_512kb.mp4"
+          type="video/mp4"
+        />
+        Your browser doesn't support HTML video tag.
+      </video>
+      <video
+        autoplay=""
+        controls=""
+        src="media/flower.mp4"
+        style="width: 250; height: 200px"
+      >
+      Your browser doesn't support HTML video tag.
+      </video>
+    </div>
+
+
+
+    <div class="output_iframe">
+      <h2> 3. iframe </h2>
+      <p> <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe">
+        https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe</a>
+      </p>
+      <div class="precode">
+        <pre>
+          <code>
+            < iframe
+              id="inlineFrameExample"
+              title="Inline Frame Example"
+              width="620"
+              height="300"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%
+                  2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&layer=mapnik"
+            >
+            < /iframe>
+            < iframe
+              src="https://example.org"
+              title="iframe Example 1"
+              width="400"
+              height="300"
+            >
+            < /iframe>          
+          </code>
+        </pre>
+      </div>
+      <iframe
+        id="inlineFrameExample"
+        title="Inline Frame Example"
+        width="620"
+        height="300"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&layer=mapnik"
+      >
+      </iframe>
+      <iframe
+        src="https://example.org"
+        title="iframe Example 1"
+        width="400"
+        height="300"
+      >
+      </iframe>
+      <p>Firefox does not allow to open links of embedded pages.</p>
+    </div>
+
+
+
+    <div class="output_audio">
+      <h2> 4. audio  </h2>
+      <p> <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio">
+        https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio</a>
+      </p>
+      <div class="precode">
+        <pre>
+          <code>
+            < figure>
+              < figcaption>Listen to the T-Rex:</figcaption>
+              < audio controls src="media/t-rex-roar.mp3">
+                Your browser does not support the
+                < code>audio< /code> element.
+              < /audio>
+            < /figure>         
+          </code>
+        </pre>
+      </div>
+      <figure>
+        <figcaption>Listen to the T-Rex:</figcaption>
+        <audio controls src="media/t-rex-roar.mp3">
+          Your browser does not support the
+          <code>audio</code> element.
+        </audio>
+      </figure>
+    </div>
+
+
+
+    <div class="output_canvas">
+      <h2> 5. canvas </h2>
+      <p> <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas">
+        https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas</a>
+      </p>
+      <div class="precode">
+        <pre>
+          <code>
+            < canvas width="300" height="100">
+              An alternative text describing what your canvas displays.
+            < /canvas>
+            < s c r i p t >
+              const canvas = document.querySelector("canvas");
+              const ctx = canvas.getContext("2d");
+              ctx.fillStyle = "green";
+              ctx.fillRect(10, 10, 100, 100);
+            < / s c r i p t>       
+          </code>
+        </pre>
+      </div>
+      <canvas width="300" height="100">
+        An alternative text describing what your canvas displays.
+      </canvas>
+    </div>
+    <script>
+      const canvas = document.querySelector("canvas");
+      const ctx = canvas.getContext("2d");
+      ctx.fillStyle = "green";
+      ctx.fillRect(10, 10, 100, 100);
+    </script>
+
+
+
+    <div class="output_math">
+      <h2> 6. math  </h2>
+      <p> <a href="https://developer.mozilla.org/en-US/docs/Web/MathML/Element/math">
+        https://developer.mozilla.org/en-US/docs/Web/MathML/Element/math</a>
+      </p>
+      <div class="precode">
+        <pre>
+          <code>
+            The infinite sum
+            < math display="inline">
+              < mrow>
+                < munderover>
+                  < mo>∑< /mo>
+                  < mrow>
+                    < mi>n< /mi>
+                    < mo>=< /mo>
+                    < mn>1< /mn>
+                  < /mrow>
+                  < mrow>
+                    < mo>+< /mo>
+                    < mn>∞< /mn>
+                  < /mrow>
+                < /munderover>
+                < mfrac>
+                  < mn>1< /mn>
+                  < msup>
+                    < mi>n< /mi>
+                    < mn>2< /mn>
+                  < /msup>
+                < /mfrac>
+              < /mrow>
+            < /math>
+            is equal to the real number
+            < math display="inline">
+              < mfrac>
+                < msup>
+                  < mi>π< /mi>
+                  < mn>2< /mn>
+                < /msup>
+                < mn>6< /mn>
+              < /mfrac>
+            < /math>
+            .     
+          </code>
+        </pre>
+      </div>
+      <p id="output_math_p">
+        The infinite sum
+        <math display="inline">
+          <mrow>
+            <munderover>
+              <mo>∑</mo>
+              <mrow>
+                <mi>n</mi>
+                <mo>=</mo>
+                <mn>1</mn>
+              </mrow>
+              <mrow>
+                <mo>+</mo>
+                <mn>∞</mn>
+              </mrow>
+            </munderover>
+            <mfrac>
+              <mn>1</mn>
+              <msup>
+                <mi>n</mi>
+                <mn>2</mn>
+              </msup>
+            </mfrac>
+          </mrow>
+        </math>
+        is equal to the real number
+        <math display="inline">
+          <mfrac>
+            <msup>
+              <mi>π</mi>
+              <mn>2</mn>
+            </msup>
+            <mn>6</mn>
+          </mfrac>
+        </math>
+        .
+      </p>
+    </div>
+
+
+
+    <div class="output_object">
+      <h2> 7. object </h2>
+      <p> <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/object">
+        https://developer.mozilla.org/en-US/docs/Web/HTML/Element/object</a>
+      </p>
+      <div class="precode">
+        <pre>
+          <code>
+            < object
+              type="application/pdf"
+              data="media/In-CC0.pdf"
+              width="400"
+              height="500"
+            >< /object>
+          </code>
+        </pre>
+      </div>
+      <object
+        type="application/pdf"
+        data="media/In-CC0.pdf"
+        width="400"
+        height="500"
+      ></object>
+    </div>
+
+
+
+    <div class="output_svg">
+      <h2> 8. scalable vector graphics (svg)  </h2>
+      <p> <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg">
+        https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg</a>
+      </p>
+      <div class="precode">
+        <pre>
+          <code>
+            < !-- 
+              - Two circles relative to the first viewBox. 
+              - A second viewBox relative to the first viewBox
+              - A third circle relative to the second viewBox
+            -->
+            < svg
+              viewBox="0 0 300 100"
+              xmlns="http://www.w3.org/2000/svg"
+              stroke="red"
+              fill="grey"
+            >
+              < circle cx="50" cy="50" r="40" />
+              < circle cx="150" cy="50" r="4" />
+              < svg viewBox="0 0 10 10" x="200" width="100">
+                < circle cx="5" cy="5" r="4" />
+              < /svg>
+            < /svg>
+            < !-- 
+              - a circle relative to the viewBox, with gold-red color gradient
+              - size: r=5/0.1=50; d=50*2=100
+              - xposition: -12.5*7/0.35=250
+              - use builds circle with #mycircle and #myGradient, 
+                relative to some other object of size 200x200
+            -->
+            < svg viewBox="-12.5 0 35 10" xmlns="http://www.w3.org/2000/svg">
+              < !-- Some graphical objects to use -->
+              < defs>
+                < circle id="myCircle" cx="0" cy="0" r="5" />
+                < linearGradient id="myGradient" gradientTransform="rotate(90)">
+                  < stop offset="20%" stop-color="gold" />
+                  < stop offset="90%" stop-color="red" />
+                < /linearGradient>
+              < /defs>
+              < !-- using my graphical objects -->
+              < use x="5" y="5" href="#myCircle" fill="url('#myGradient')" />
+            < /svg>
+            < !-- 
+              - symbol with viewBox and circle
+              - a grid
+              - 5 dots: size 5/0.2=25, with different opacity
+            -->
+            < svg viewBox="0 0 80 20" xmlns="http://www.w3.org/2000/svg">
+              < !-- Our symbol in its own coordinate system -->
+              < symbol id="myDot" width="10" height="10" viewBox="0 0 2 2">
+                < circle cx="1" cy="1" r="1" />
+              < /symbol>
+              < !-- A grid to materialize our symbol positioning -->
+              < path
+                d="M0,10 h80 M10,0 v20 M25,0 v20 M40,0 v20 M55,0 v20 M70,0 v20"
+                fill="none"
+                stroke="pink"
+              />
+              < !-- All instances of our symbol -->
+              < use href="#myDot" x="5" y="5" style="opacity: 1" />
+              < use href="#myDot" x="20" y="5" style="opacity: 0.8" />
+              < use href="#myDot" x="35" y="5" style="opacity: 0.6" />
+              < use href="#myDot" x="50" y="5" style="opacity: 0.4" />
+              < use href="#myDot" x="65" y="5" style="opacity: 0.2" />
+            < /svg>
+            < !-- 
+              1. #output_svg_img { margin: 0 auto; width: 210px; height: 210px }
+                  - The rule margin=(0,auto) places a div of size=(210px,210px) center aligned
+              2. viewBox="-200 0 400 150" width="200" height="200"
+                  - The viewBox has size=(200px,200px). It is fix.
+                  - The viewBox's top left corner has position (0,0). It is fix.
+                  - The top left corner of ViewBox and #output_svg_img is identical.
+                  - (-200 0 400 150) is the relative size and position of the viewBox
+                    with respect to the vector graphic below.
+              3a. viewBox="-200 0 400 150" width="200" height="200"
+                  image height="80" width="80" (these are percentages)
+                  image-size: 200px/4*0.8=40px
+                  image-position: -200px/4*2=-100px       
+              3.b viewBox="-20 0 40 90" width="200" height="200"
+                  image height="125" width="125" (these are percentages)
+                  image-size: 200px/0.9*1.25=277.7px
+                  image-position: -20px/0.4*2=-100px
+            -->
+            < div id="output_svg_img">
+              < svg viewBox="-200 0 400 150" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+                < image href="media/mdn_logo_only_color.png" height="180" width="180" />
+              < /svg>
+            < /div>            
+          </code>
+        </pre>
+      </div>
+      <!-- 
+        - Two circles relative to the first viewBox. 
+        - A second viewBox relative to the first viewBox
+        - A third circle relative to the second viewBox
+      -->
+      <svg
+        viewBox="0 0 300 100"
+        xmlns="http://www.w3.org/2000/svg"
+        stroke="red"
+        fill="grey"
+      >
+        <circle cx="50" cy="50" r="40" />
+        <circle cx="150" cy="50" r="4" />
+        <svg viewBox="0 0 10 10" x="200" width="100">
+          <circle cx="5" cy="5" r="4" />
+        </svg>
+      </svg>
+      <!-- 
+        - a circle relative to the viewBox, with gold-red color gradient
+        - size: r=5/0.1=50; d=50*2=100
+        - xposition: -12.5*7/0.35=250
+        - use builds circle with #mycircle and #myGradient, 
+          relative to some other object of size 200x200
+      -->
+      <svg viewBox="-12.5 0 35 10" xmlns="http://www.w3.org/2000/svg">
+        <!-- Some graphical objects to use -->
+        <defs>
+          <circle id="myCircle" cx="0" cy="0" r="5" />
+          <linearGradient id="myGradient" gradientTransform="rotate(90)">
+            <stop offset="20%" stop-color="gold" />
+            <stop offset="90%" stop-color="red" />
+          </linearGradient>
+        </defs>
+        <!-- using my graphical objects -->
+        <use x="5" y="5" href="#myCircle" fill="url('#myGradient')" />
+      </svg>
+      <!-- 
+        - symbol with viewBox and circle
+        - a grid
+        - 5 dots: size 5/0.2=25, with different opacity
+      -->
+      <svg viewBox="0 0 80 20" xmlns="http://www.w3.org/2000/svg">
+        <!-- Our symbol in its own coordinate system -->
+        <symbol id="myDot" width="10" height="10" viewBox="0 0 2 2">
+          <circle cx="1" cy="1" r="1" />
+        </symbol>
+        <!-- A grid to materialize our symbol positioning -->
+        <path
+          d="M0,10 h80 M10,0 v20 M25,0 v20 M40,0 v20 M55,0 v20 M70,0 v20"
+          fill="none"
+          stroke="pink"
+        />
+        <!-- All instances of our symbol -->
+        <use href="#myDot" x="5" y="5" style="opacity: 1" />
+        <use href="#myDot" x="20" y="5" style="opacity: 0.8" />
+        <use href="#myDot" x="35" y="5" style="opacity: 0.6" />
+        <use href="#myDot" x="50" y="5" style="opacity: 0.4" />
+        <use href="#myDot" x="65" y="5" style="opacity: 0.2" />
+      </svg>
+      <!-- 
+        1. #output_svg_img { margin: 0 auto; width: 210px; height: 210px }
+            - The rule margin=(0,auto) places a div of size=(210px,210px) center aligned
+        2. viewBox="-200 0 400 150" width="200" height="200"
+            - The viewBox has size=(200px,200px). It is fix.
+            - The viewBox's top left corner has position (0,0). It is fix.
+            - The top left corner of ViewBox and #output_svg_img is identical.
+            - (-200 0 400 150) is the relative size and position of the viewBox
+              with respect to the vector graphic below.
+        3a. viewBox="-200 0 400 150" width="200" height="200"
+            image height="80" width="80" (these are percentages)
+            image-size: 200px/4*0.8=40px
+            image-position: -200px/4*2=-100px       
+        3.b viewBox="-20 0 40 90" width="200" height="200"
+            image height="125" width="125" (these are percentages)
+            image-size: 200px/0.9*1.25=277.7px
+            image-position: -20px/0.4*2=-100px
+      -->
+      <div id="output_svg_img">
+        <svg viewBox="-200 0 400 150" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+          <image href="media/mdn_logo_only_color.png" height="180" width="180" />
+        </svg>
+      </div>
+    </div>
+
+
+
+    <div class="output_image">
+      <h2> 9. image </h2>
+      <p> <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img">
+        https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img</a>
+      </p>
+      <div class="precode">
+        <pre>
+          <code>
+            < img
+              class="fit-picture"
+              src="media/grapefruit-slice-332-332.jpg"
+              alt="Grapefruit slice atop a pile of other slices"
+            />
+            < img
+              src="media/clock-demo-200px.png"
+              alt="Clock"
+              srcset="
+                media/clock-demo-200px.png 200w,
+                media/clock-demo-400px.png 400w
+              "
+              sizes="(max-width: 600px) 200px, 50vw"
+            />
+          </code>
+        </pre>
+      </div>
+      <img
+        class="fit-picture"
+        src="media/grapefruit-slice-332-332.jpg"
+        alt="Grapefruit slice atop a pile of other slices"
+      />
+      <img
+        src="media/clock-demo-200px.png"
+        alt="Clock"
+        srcset="
+          media/clock-demo-200px.png 200w,
+          media/clock-demo-400px.png 400w
+        "
+        sizes="(max-width: 600px) 200px, 50vw"
+      />
+      <p> The clock resizes and at Browser size=600px a 400px-image will be switched with a 200px-image.</p>
+    </div>
+
+
+
+    <div class="output_map">
+      <h2> 10. map </h2>
+      <p> <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/map">
+        https://developer.mozilla.org/en-US/docs/Web/HTML/Element/map</a>
+      </p>
+      <div class="precode">
+        <pre>
+          <code>
+            < !-- triangle with html, css, js -->
+            < map name="infographic">
+              < area
+                shape="poly"
+                coords="130,147,200,107,254,219,130,228"
+                href="https://developer.mozilla.org/docs/Web/HTML"
+                target="_blank"
+                alt="HTML"
+              />
+              < area
+                shape="poly"
+                coords="130,147,130,228,6,219,59,107"
+                href="https://developer.mozilla.org/docs/Web/CSS"
+                target="_blank"
+                alt="CSS"
+              />
+              < area
+                shape="poly"
+                coords="130,147,200,107,130,4,59,107"
+                href="https://developer.mozilla.org/docs/Web/JavaScript"
+                target="_blank"
+                alt="JavaScript"
+              />
+            < /map>
+            < !--- map inserted into image -->
+            < img
+              usemap="#infographic"
+              src="media/mdn-info2.png"
+              alt="MDN infographic"
+            />
+            < !-- Parrot: Photo by Juliana e Mariana Amorim on Unsplash -->
+            < map name="primary">
+              < area
+                shape="circle"
+                coords="75,75,75"
+                href="https://developer.mozilla.org/docs/Web/JavaScript"
+                target="_blank"
+                alt="JavaScript"
+              />
+              < area
+                shape="circle"
+                coords="275,75,75"
+                href="https://developer.mozilla.org/docs/Web/CSS"
+                target="_blank"
+                alt="CSS"
+              />
+            < /map>
+            < !--- map inserted into image -->
+            < img
+              usemap="#primary"
+              src="media/parrots.jpg"
+              alt="350 x 150 picture of two parrots"
+            />           
+          </code>
+        </pre>
+      </div>
+      <!-- triangle with html, css, js -->
+      <map name="infographic">
+        <area
+          shape="poly"
+          coords="130,147,200,107,254,219,130,228"
+          href="https://developer.mozilla.org/docs/Web/HTML"
+          target="_blank"
+          alt="HTML"
+        />
+        <area
+          shape="poly"
+          coords="130,147,130,228,6,219,59,107"
+          href="https://developer.mozilla.org/docs/Web/CSS"
+          target="_blank"
+          alt="CSS"
+        />
+        <area
+          shape="poly"
+          coords="130,147,200,107,130,4,59,107"
+          href="https://developer.mozilla.org/docs/Web/JavaScript"
+          target="_blank"
+          alt="JavaScript"
+        />
+      </map>
+      <!--- map inserted into image -->
+      <img
+        usemap="#infographic" 
+        src="media/mdn-info2.png"
+        alt="MDN infographic"
+      />
+      <!-- Parrot: Photo by Juliana e Mariana Amorim on Unsplash -->
+      <map name="primary">
+        <area
+          shape="circle"
+          coords="75,75,75"
+          href="https://developer.mozilla.org/docs/Web/JavaScript"
+          target="_blank"
+          alt="JavaScript"
+        />
+        <area
+          shape="circle"
+          coords="275,75,75"
+          href="https://developer.mozilla.org/docs/Web/CSS"
+          target="_blank"
+          alt="CSS"
+        />
+      </map>
+      <!--- map inserted into image -->
+      <img
+        usemap="#primary" 
+        src="media/parrots.jpg"
+        alt="350 x 150 picture of two parrots"
+      />
+      <p> The images contain a map with clickable links to MDN websites. </p>
+    </div>
+
+
+
+    <div class="output_picture">
+      <h2> 11. picture </h2>
+      <p> <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture">
+        https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture</a>
+      </p>
+      <div class="precode">
+        <pre>
+          <code>
+            < picture>
+              < source srcset="media/surfer-240-200.jpg" media="(min-width: 800px)" />
+              < img src="media/painted-hand-298-332.jpg" alt="" />
+            < /picture>      
+          </code>
+        </pre>
+      </div>
+      <!--Change the browser window width to see the image change.-->
+      <picture>
+        <source srcset="media/surfer-240-200.jpg" media="(min-width: 800px)" />
+        <img src="media/painted-hand-298-332.jpg" alt="" />
+      </picture>
+      <p> At Browser size=800px the image will be switched with another image.</p>
+    </div>
+
+
+
+    <div class="output_track">
+      <h2> 12. track </h2>
+      <p> <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/track">
+        https://developer.mozilla.org/en-US/docs/Web/HTML/Element/track</a>
+      </p>
+      <div class="precode">
+        <pre>
+          <code>
+            < video controls src="media/friday.mp4">
+              < track default kind="subtitles" srclang="en" src="media/friday.vtt" />
+              Sorry, your browser doesn't support embedded videos.
+            < /video>        
+          </code>
+        </pre>
+      </div>
+      <video controls src="media/friday.mp4">
+        <track default kind="subtitles" srclang="en" src="media/friday.vtt" />
+        Sorry, your browser doesn't support embedded videos.
+      </video>
+      <p>When the webpage is served by a webserver there should be subtitles, otherwise it doesn't seem to work. </p>
+    </div>
+  </body>
+</html>
