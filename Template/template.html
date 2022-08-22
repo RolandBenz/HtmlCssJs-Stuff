@@ -3,12 +3,20 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>My CSS Selector Properties Page</title>
+    <title>Template</title>
+    <!-- Fonts inclusion;
+    Choose from https://fonts.google.com/;
+    This code links your page to a style sheet that loads the Open Sans font family,
+    with your webpage and therefore don't have to be installed on a client computer.
+    But they still need to be chosen with font-family property in your CSS file. -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Silkscreen" rel="stylesheet"/>
     <!-- JS inclusion -->
-    <script src="CssSelectorProperties.js"></script>
+    <script src="Template.js"></script>
     <!-- CSS inclusion -->
-    <link rel="stylesheet" type="text/css" href="CssSelectorProperties.css" media="screen" />
-    <style type = "text/css" media = "all"> body { background-color: rgba(192, 243, 245, 0.646); } </style>
+    <link rel="stylesheet" type="text/css" href="Template.css" media="screen" />
+    <style type="text/css" media="all"> body { background-color: rgba(192, 243, 245, 0.646); } </style>
   </head>
 
   <body>
@@ -16,10 +24,13 @@
     <h1 class="h1class" id="h1id">This is my h1</h1>
     <div class="divclass" id="divid">
       <h2 class="h2class" id="h2id">This is my h2</h2>
-      <p class = "pclass pbold">This p will be styled by the classes pclass and pbold.</p>
-      <p class="pclass" id="pid" style = "color:rgb(48, 68, 107);">This is my p with CSS inline style</p>
+      <p class="pclass pbold">
+        This p will be styled by the classes pclass and pbold.
+      </p>
+      <p class="pclass" id="pid" style="color: rgb(48, 68, 107)">
+        This is my p with CSS inline style
+      </p>
     </div>
-     <!-- to here -->
+    <!-- to here -->
   </body>
-
 </html>
