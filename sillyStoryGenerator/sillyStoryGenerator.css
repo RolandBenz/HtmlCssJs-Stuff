@@ -1,0 +1,36 @@
+/* your snippet */
+html {
+    background-color: #00529f57;
+    font-size: 20px;
+    font-family: helvetica, "Silkscreen", "Roboto", "Open Sans", sans-serif;
+}
+
+body {
+    margin: 20px auto;
+    width: 350px;
+    border: 5px solid black;
+    padding: 30px 20px 20px 20px;
+    background-color: #ff95008b;
+  }
+
+label {
+  font-weight: bold;
+}
+
+label[for = "customname"] { color: #490404b7 }
+
+div {
+  padding-bottom: 20px;
+}
+
+input[type="text"] {
+  padding: 5px;
+  width: 150px;
+}
+
+p {
+  background: #ffc125;
+  color: #5e2612;
+  padding: 10px;
+  visibility: hidden;
+}
