@@ -94,6 +94,7 @@ Elements...
 */
 html {
     background-color: #00529f84;
+    background-image: url("backgroundimage3.jpg");
     font-size: 20px;
     font-family: "Silkscreen", "Roboto", "Open Sans", sans-serif;
   }
@@ -114,7 +115,7 @@ html {
   5. background color
   */
   body {
-    margin: 0 auto;
+    margin: 30px auto;
     width: 500px;
     border: 5px solid black;
     padding: 0 20px 20px 20px;
@@ -156,3 +157,6 @@ html {
     line-height: 2;
     letter-spacing: 1px;
   }
+
+  .pclass { letter-spacing: 5px;}
+  .pbold { font-weight: bolder; }
