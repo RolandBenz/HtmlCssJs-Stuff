@@ -1,0 +1,52 @@
+/* 
+Elements...
+1. background color
+2. base font size, x pixels high
+3. use included Google fonts, with fallback values. 
+   The browser will select the first font in the list that is installed or that can be downloaded.
+   https://developer.mozilla.org/en-US/docs/Web/CSS/font-family
+*/
+html {
+  background-color: #00529f84;
+  background-image: url("backgroundimage.jpg");
+  font-size: 20px;
+  font-family: "Silkscreen", "Roboto", "Open Sans", sans-serif;
+}
+
+/*
+  Element's...
+  1. fixed margin
+      https://developer.mozilla.org/en-US/docs/Web/CSS/margin
+      margin: 1em;                all four sides
+      margin: 10px 3px 30px 5px;  top, right, bottom, left
+      margin: auto;               top and bottom 0 margin, Box is horizontally centered
+      margin: 5% auto;            vertical, horizontal 
+      margin: 2em auto;           top and bottom 2em margin, Box is horizontally centered
+  2. fixed width
+  3. fixed border
+  4. padding
+      https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+  5. background color
+  */
+body {
+  margin: 20px 20px 20px 20px;
+  border: 5px solid black;
+  padding: 20px 0px 20px 20px;
+  background-color: #00ff9543;
+}
+
+h1 {
+  /*border: 1px solid black;*/
+  font-size: 60px;
+  text-align: center;
+  margin: 0 0 20px 0;
+  overflow: hidden;
+  color: #00539f;
+  text-shadow: 3px 3px 1px black;
+}
+
+iframe {
+  margin: 0px 15px 0px 0px;
+  width: 31%;
+  height: 350px;
+}
