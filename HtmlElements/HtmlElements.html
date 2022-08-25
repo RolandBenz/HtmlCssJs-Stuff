@@ -274,19 +274,34 @@
       <div class="precode">
         <pre>
           <code>
-            < canvas width="300" height="100">
+            < canvas id="canvas" width="300" height="175">
               An alternative text describing what your canvas displays.
             < /canvas>
             < s c r i p t >
               const canvas = document.querySelector("canvas");
               const ctx = canvas.getContext("2d");
               ctx.fillStyle = "green";
-              ctx.fillRect(10, 10, 100, 100);
+              ctx.fillRect(10, 10, 130, 130);
+              /* this part of the graphic waits with drawing until widow finished loading*/
+              window.onload = function() {
+                var canvas = document.getElementById("canvas");
+                var context = canvas.getContext("2d");
+                context.font = "bold 15px Arial";
+                context.fillStyle = "blue";
+                context.fillText("Hello World!", 30, 30);
+                context.arc(150, 100, 70, 0, 2 * Math.PI, false);
+                var grd = context.createRadialGradient(100, 100, 10, 160, 110, 100);
+                grd.addColorStop(0, '#8ED6FF');   
+                grd.addColorStop(1, '#004CB3');
+                context.fillStyle = grd;
+                context.fill();
+                context.stroke();
+              };
             < / s c r i p t>       
           </code>
         </pre>
       </div>
-      <canvas width="300" height="100">
+      <canvas id="canvas" width="300" height="175">
         An alternative text describing what your canvas displays.
       </canvas>
     </div>
@@ -294,7 +309,22 @@
       const canvas = document.querySelector("canvas");
       const ctx = canvas.getContext("2d");
       ctx.fillStyle = "green";
-      ctx.fillRect(10, 10, 100, 100);
+      ctx.fillRect(10, 10, 130, 130);
+      /* this part of the graphic waits with drawing until widow finished loading*/
+      window.onload = function() {
+        var canvas = document.getElementById("canvas");
+        var context = canvas.getContext("2d");
+        context.font = "bold 15px Arial";
+        context.fillStyle = "blue";
+        context.fillText("Hello World!", 30, 30);
+        context.arc(150, 100, 70, 0, 2 * Math.PI, false);
+        var grd = context.createRadialGradient(100, 100, 10, 160, 110, 100);
+        grd.addColorStop(0, '#8ED6FF');   
+        grd.addColorStop(1, '#004CB3');
+        context.fillStyle = grd;
+        context.fill();
+        context.stroke();
+      };
     </script>
 
 
@@ -499,10 +529,30 @@
                   image-position: -20px/0.4*2=-100px
             -->
             < div id="output_svg_img">
-              < svg viewBox="-200 0 400 150" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+              < svg viewBox="-200 0 400 150" width="200" height="200" 
+                    xmlns="http://www.w3.org/2000/svg">
                 < image href="media/mdn_logo_only_color.png" height="180" width="180" />
               < /svg>
-            < /div>            
+            < /div>
+            <!-- without viewBox: contains rectangle, circle, line and text -->
+            < svg width="300" height="200">
+              < text x="10" y="20" style="font-size:14px;">
+                  Your browser supports SVG.
+              < /text>
+              Sorry, your browser does not support SVG.
+              < rect x="50" y="50" width="200" height="100" style="fill:orange; stroke:black; 
+                     stroke-width:3;" />
+              < circle cx="150" cy="100" r="70" style="fill:lime; stroke:black; stroke-width:3;" />
+              < line x1="250" y1="50" x2="250" y2="150" style="stroke:red; stroke-width:3;" />
+              < text x="50" y="30" style="fill:purple; font-size:22px; transform:rotate(30deg);">
+                < tspan style="fill:purple; font-size:22px;">
+                    Welcome to Our Website!
+                < /tspan>
+                < tspan dx="-240" dy="20" style="fill:navy; font-size:14px;">
+                    Here you'll find lots of useful information.
+                < /tspan>
+              < /text>
+            < /svg>            
           </code>
         </pre>
       </div>
@@ -588,6 +638,24 @@
           <image href="media/mdn_logo_only_color.png" height="180" width="180" />
         </svg>
       </div>
+      <!-- without viewBox: contains rectangle, circle, line and text -->
+      <svg width="300" height="200">
+        <text x="10" y="20" style="font-size:14px;">
+            Your browser supports SVG.
+        </text>
+        Sorry, your browser does not support SVG.
+        <rect x="50" y="50" width="200" height="100" style="fill:orange; stroke:black; stroke-width:3;" />
+        <circle cx="150" cy="100" r="70" style="fill:lime; stroke:black; stroke-width:3;" />
+        <line x1="250" y1="50" x2="250" y2="150" style="stroke:red; stroke-width:3;" />
+        <text x="50" y="30" style="fill:purple; font-size:22px; transform:rotate(30deg);">
+          <tspan style="fill:purple; font-size:22px;">
+              Welcome to Our Website!
+          </tspan>
+          <tspan dx="-240" dy="20" style="fill:navy; font-size:14px;">
+              Here you'll find lots of useful information.
+          </tspan>
+        </text>
+      </svg>
     </div>
 
 
