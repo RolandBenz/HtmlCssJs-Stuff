@@ -19,10 +19,15 @@
     <!-- CSS inclusion -->
     <link rel="stylesheet" type="text/css" href="Template.css" media="screen" />
     <style type="text/css" media="all"> body { background-color: rgba(192, 243, 245, 0.646); } </style>
+    <style> iframe { width: 100%; height: 350px} </style>
+    <style> h2~p#jump.jump { line-height: 200px;} </style>
+    <style> img { width: 100%; height: 100%} </style>
   </head>
 
   <body>
     <!-- Replace with your code from here -->
+    
+
     <h1 class="h1class" id="h1id">This is my h1</h1>
     <div class="divclass" id="divid">
       <h2 class="h2class" id="h2id">This is my h2</h2>
@@ -33,6 +38,46 @@
         This is my p with CSS inline style
       </p>
     </div>
+
+    <h2>This is my iFrame</h2>
+    <iframe id="iframe"></iframe>
+    <script>
+      var doc = document.getElementById('iframe').contentWindow.document;
+      doc.open();
+      doc.write(`
+      <!DOCTYPE html>
+      <html lang="en-US">
+        <head>
+          <style> img#iimg { width: 100%; height: 100%} </style>
+        </head>
+        <body>
+          <p>1. This is my Base64 RED DOT</p>
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==" alt="Red dot" />
+          <p>2. This is my "_self" link to the same image</p>
+          <a href="image.jpeg" target="_self"><img id="iimg" src="image.jpeg" alt="Image"></a>
+          <p>3. This is my "_parent" link to the same image</p>
+          <a href="image.jpeg" target="_parent"><img id="iimg" src="image.jpeg" alt="Image"></a>       
+          <p>3. This is my "_top" link to a local file</p>
+          <a href="../Snippet/Snippet.html" target="_top">_top</a>
+          <p>4. This is my "_blank" link to a remote website</p>
+          <a href="https://www.google.com/" target="_blank">_blank</a>
+        </body>
+      </html>
+      `)
+      doc.close();    
+    </script>
+    
+    <h2>This is my Jump</h2>
+    <p><a href="#jumpi">Jump to Image</a></p>
+    <p>...</p>
+    <p class="jump" id="jump">...</p>
+    <div>
+      <a id="jumpi" href="image.jpeg" target="_parent">
+        <img src="image.jpeg" alt="Image">
+      </a>
+    </div>
+
+
     <!-- to here -->
   </body>
 </html>

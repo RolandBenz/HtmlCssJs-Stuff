@@ -95,6 +95,7 @@ Elements...
 html {
     background-color: #00529f84;
     background-image: url("backgroundimage3.jpg");
+    background-size: 4000px;
     font-size: 20px;
     font-family: "Silkscreen", "Roboto", "Open Sans", sans-serif;
   }
