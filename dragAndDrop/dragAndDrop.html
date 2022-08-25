@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Drag and Drop/title></title>
+    <!-- JS inclusion -->
+    <script src="dragAndDrop.js" defer></script>
+    <!-- CSS inclusion -->
+    <link rel="stylesheet" type="text/css" href="dragAndDrop.css" media="screen" />
+
+  </head>
+
+  <body>
+    <!-- Replace with your code from here -->
+    
+    
+    <h2>Drag and Drop</h2>
+    <p>Drag and drop the images from one drop box into another:</p>
+    <div class="wrapper">
+        <div id="dropBox" ondragover="dragOver(event);" ondrop="drop(event);">
+            <!--Dropped image will be inserted here-->
+        </div>
+        <div id="dropBox" ondragover="dragOver(event);" ondrop="drop(event);">
+        <!--Dropped image will be inserted here-->
+        </div>
+        <div id="dropBox" ondragover="dragOver(event);" ondrop="drop(event);">
+            <!--Dropped image will be inserted here-->
+        </div>
+    </div>
+    <div class="wrapper">
+        <div id="dropBox" ondragover="dragOver(event);" ondrop="drop(event);">
+            <img src="image.jpeg" id="dragA_1" draggable="true" ondragstart="dragStart(event);"  alt="Image">
+        </div>
+        <div id="dropBox" ondragover="dragOver(event);" ondrop="drop(event);">
+            <img src="image.jpeg" id="dragA_2" draggable="true" ondragstart="dragStart(event);"  alt="Image">
+        </div>
+        <div id="dropBox" ondragover="dragOver(event);" ondrop="drop(event);">
+            <img src="image.jpeg" id="dragA_3" draggable="true" ondragstart="dragStart(event);"  alt="Image">
+        </div>
+    </div>
+          
+
+    <!-- to here -->
+  </body>
+</html>
