@@ -53,6 +53,7 @@ Selectors
           li li { list-style-type: circle; }
       B7. CSS Tag Grouping Selector: separate tags with commas
           h3, h4, h5 { color: rgba(139, 100, 106, 0.952); }
+
     C Class ...
       C1. CSS Class Selectors
           .iclass { color: rgb(255, 102, 0); }
@@ -62,6 +63,8 @@ Selectors
           .iclass p { color: rgba(44, 167, 101, 0.699); }
       C4. CSS Class Grouping Selector: separate classes with commas
           .iclass1, .iclass2 { color: rgb(204, 132, 84); }
+      C5. CSS Class Class Selector: only those containing iclass1 and iclass2
+          .iclass1.iclass2 { color: rgb(20, 12, 184); }
     D Pseudo Class
       D1. CSS Pseudo Class Selector: any button over which user's pointer is hovering
         https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes
@@ -96,6 +99,7 @@ html {
     background-color: #00529f84;
     background-image: url("backgroundimage3.jpg");
     background-size: 4000px;
+    /*background-blend-mode:color-dodge;*/
     font-size: 20px;
     font-family: "Silkscreen", "Roboto", "Open Sans", sans-serif;
   }
