@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Template</title>
+    <!-- JS inclusion -->
+    <script src="cssDisplayComparison.js" defer></script>
+    <!-- CSS inclusion -->
+    <link rel="stylesheet" type="text/css" href="cssDisplayComparison.css" media="all" />
+  </head>
+
+  <body>
+    <!-- Replace with your code from here -->
+    
+    <br/><br/>
+    <article class="container">
+      <span>First</span>
+      <span>Second</span>
+      <span>Third</span>
+    </article>
+
+    <article class="container">
+      <span>First</span>
+      <span>Second</span>
+      <span>Third</span>
+    </article>
+
+    <section>
+      <label for="display">Choose a display value:</label>
+      <select id="display">
+        <option selected>block</option>
+        <option>inline</option>
+        <option>inline-block</option>
+        <option>none</option>
+        <option>flex</option>
+        <option>inline-flex</option>
+        <option>grid</option>
+        <option>inline-grid</option>
+        <option>table</option>
+        <option>list-item</option>
+      </select>
+    </section>
+    <br/><br/>
+    <div>
+      <p>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout">
+          https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout
+        </a><br/><br/>     
+        Normal Flow, or Flow Layout, is the way that Block and Inline elements are displayed on a page 
+        before any changes are made to their layout. 
+        n normal flow, inline elements display in the inline direction, 
+        that is in the direction words are displayed in a sentence according to the Writing Mode of the document. 
+        Block elements display one after the other, as paragraphs do in the Writing Mode of that document. 
+        In English therefore, inline elements display one after the other, starting on the left, 
+        and block elements start at the top and move down the page.
+      </p><br/>     
+      <p>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout/Block_and_Inline_Layout_in_Normal_Flow">
+          https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout/Block_and_Inline_Layout_in_Normal_Flow
+        </a><br/><br/> 
+        The display type of an element defines the outer display type; 
+        this dictates how the box displays alongside other elements in the same formatting context. 
+        It also defines the inner display type, which dictates how boxes inside this element behave.
+        Therefore you can think of every box in CSS working in this way. 
+        The box itself has an outer display type, so it knows how to behave alongside other boxes. 
+        It then has an inner display type which changes the way its children behave. 
+        Those children then have an outer and inner display type too. 
+      </p><br/> 
+      <p>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements">
+          https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements
+        </a><br/><br/> 
+        Inline elements are those which only occupy the space bounded by the tags defining the element, 
+        instead of breaking the flow of the content.
+        Note: An inline element does not start on a new line and only takes up as much width as necessary.
+        You can change the visual presentation of an element using the CSS display property. 
+        For example, by changing the value of display from "inline" to "block", 
+        you can tell the browser to render the inline element in a block box rather than an inline box, 
+        and vice versa.
+      </p><br/> 
+      <p>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements">
+          https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements
+        </a><br/><br/> 
+        Browsers typically display the block-level element with a newline both before and after the element. 
+        You can visualize them as a stack of boxes.
+        Note: A block-level element always starts on a new line and takes up the full width available 
+        (stretches out to the left and right as far as it can).
+      </p><br/> 
+      <p>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout">
+          https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout
+        </a><br/>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Typical_Use_Cases_of_Flexbox">
+          https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Typical_Use_Cases_of_Flexbox
+        </a><br/>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content">
+          https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content
+        </a><br/><br/> 
+        A CSS box model optimized for user interface design, and the layout of items in one dimension.
+        In the flex layout model, the children of a flex container can be laid out in any direction, 
+        and can "flex" their sizes, either growing to fill unused space 
+        or shrinking to avoid overflowing the parent. 
+        Both horizontal and vertical alignment of the children can be easily manipulated.
+      </p><br/> 
+      <h3>This example has flex-flow: row wrap;</h3>
+      <div class="box">
+        <div class="ibox">+++One+++</div>
+        <div class="ibox">+++Two+++</div>
+        <div class="ibox">+++Three+++
+            <br>has even more and more and more  
+            <br>extra
+            <br>text
+        </div>
+      </div>
+      <br/> 
+      <section>
+        <label for="justifyContent">Choose a justify-content value:</label>
+        <select id="justifyContent">
+          <option selected>center</option>
+          <option>start</option>
+          <option>end</option>
+          <option>flex-start</option>
+          <option>flex-end</option>
+          <option>left</option>
+          <option>right</option>
+          <option>normal</option>
+          <option>space-between</option>
+          <option>space-around</option>
+          <option>space-evenly</option>
+          <option>strech</option>
+          <option>safe center</option>
+          <option>unsafe center</option>
+        </select>
+        <br/>
+        <form name="formMaxWidth">
+          <label for = "max-width">Choose a max-width value:</label>
+          <input type="radio" id="small" name="RadioMaxWidth" value="20%">
+          <label for="age1">20%</label>
+          <input type="radio" id="medium" name="RadioMaxWidth" value="50%">
+          <label for="age2">50%</label>  
+          <input type="radio" id="large" name="RadioMaxWidth" value="70%" checked="checked">
+          <label for="age3">70%</label>
+        </form>
+      </section><br><br>
+      <p>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout">
+          https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout
+        </a><br/><br/> 
+        CSS Grid Layout introduces a two-dimensional grid system to CSS. 
+        Grids can be used to lay out major page areas or small user interface elements.
+        A grid is a set of intersecting horizontal and vertical lines defining columns and rows. 
+        Elements can be placed onto the grid within these column and row lines.
+        Note: Don't forget that you can use the Grid Inspector in 
+              Firefox Developer Tools to see how the items are positioned against the lines of the grid.
+      </p>
+      <div class="gridwrapper">
+        <div class="gridbox gridbox1">
+          <div class = "nested">a<br/><br/>...<br/><br/><br/>!</div>
+          <div class = "nested">b</div>
+          <div class = "nested">c</div>
+        </div>
+        <div class="gridbox gridbox2">Two</div>
+        <div class="gridbox gridbox3">Three</div>
+        <div class="gridbox gridbox4">Four</div>
+        <div class="gridbox gridbox5">Five</div>
+      </div><br/><br/>        
+    </div>
+    <!-- to here -->
+  </body>
+</html>

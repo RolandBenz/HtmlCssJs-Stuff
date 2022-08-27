@@ -1,0 +1,322 @@
+/* 
+    BASIC STYLING 
+*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+/* nav is the container for the menu*/
+nav {
+    background: #222;
+    padding: 0 15px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.menu,
+.submenu {
+    list-style-type: none;
+}
+
+.logo {
+    font-size: 20px;
+    padding: 7.5px 10px 7.5px 0;
+}
+
+.item {
+    padding: 10px;
+}
+
+.item.button {
+    padding: 9px 5px;
+}
+
+/* 
+    .item:not(.button) a:hover
+        - parent tag with class .item and not .button
+        - child tag a when hovered becomes  a color red
+    .item a:hover::after
+        - parent tag with class .item
+        - child tag a when hovered, place something after a
+    ::after (pseudo element, browsers also accept :a, for backward compatibility)
+        - used to add content after the element with {content: 'stuff to add'}
+        - here no content property is used, so it seems to me, nothing happens
+        - https://developer.mozilla.org/en-US/docs/Web/CSS/::after
+    :after (pseudo class)
+        - used to select
+*/
+.item:not(.button) a:hover,
+.item a:hover::after {
+    color: rgb(211, 15, 15);
+}
+
+/*
+    MOBILE MENU
+        (mobile first approach)
+        (@media all and (min-width: 700px) for bigger screens)
+*/
+
+/* 
+    .menu is the flexbox wrapper 
+*/
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*  inside .menu inside li-tag the a-tag  */
+.menu li a {
+    display: block;
+    padding: 15px 5px;
+}
+
+/* 
+    inside .menu inside li-tag with class .subitem the a-tag  
+        - gives more padding to left and right (from 5 to 15)
+        - but this does not have an effect for mobile and tablet screen
+        - it actually is a rule for desktop screens to make the dropdown look nicer
+*/
+.menu li.subitem a {
+    padding: 15px;
+}
+
+/* 
+    .toggle is the mobile menu icon 
+        order
+            - Sets the order to lay out an item in a flex or grid container. 
+              Items in a container are sorted by ascending order value and then by their source code order.
+              https://developer.mozilla.org/en-US/docs/Web/CSS/order
+            - So lower order are shown before higher order
+            - Class .toggle (MenuIcon) gets a lower order (1) than 
+              .item.button (LogIn and SignUp) which have order (2) and than 
+              other .item tags which have order (3)
+*/
+.toggle {
+    order: 1;
+    font-size: 20px;
+}
+
+/* .item.button 
+        - LogIn and SignUp have both .item AND .button
+*/
+.item.button {
+    order: 2;
+}
+
+/* 
+    all other .item
+        - even though it comes after, this rule does not override the more specific above
+*/
+.item {
+    order: 3;
+    width: 100%;
+    text-align: center;
+    display: none;
+}
+
+/* .active .item
+    Only tags with .item of ancestor .active
+        - there is a js function toggleMenu(), 
+          which adds and removes the class .active to the ul-tag with class .menu
+        - if the mobile menu .toggle is clicked an .active class is added to .menu
+        - the rule below changes the .item display from none to block
+          which looks nicer, because .item get centered     
+*/
+.active .item {
+    display: block;
+}
+
+/* .button.secondary 
+        - SignUp has both .button AND .secondary
+        border-bottom
+            - changes the style of the border at the bottom of the element
+            - the effect is a yellow line below SignUp
+
+*/
+.button.secondary {
+    /* divider between buttons and menu links */
+    border-bottom: 1px rgb(255, 234, 4) solid;
+}
+
+/* 
+    Submenu up 
+        - display: none; makes .submenu invisible or hidden
+*/
+.submenu {
+    display: none;
+}
+
+/* 
+    Submenu down 
+        - there is a js function toggleItem(), 
+          which adds and removes the class .submenu-active to the ul-tag with class .submenu
+        - if an .item is clicked, that has children with .submenu an .submenu-active class is added to .item
+        - display: block; makes .submenu visible
+*/
+.submenu-active .submenu {
+    display: block;
+}
+
+/* does not seem to have any effect, because below .has-submenu is no i-tag */
+.has-submenu i {
+    font-size: 25px;
+}
+
+/* .has-submenu>a::after 
+        - adds the content "\f078" after the a-tag
+        - ::after gets an own box, which can be styled 
+        - the box gets height (line-height), the content gets a size (font-size), etc.
+*/
+.has-submenu>a::after {
+    font-family: "Font Awesome 5 Free";
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 900;
+    content: "\f078";
+    color: white;
+    padding-left: 5px;
+}
+
+/* this does not seem to have any effect, because there are more specific rules*/
+.subitem a {
+    padding: 10px 15px;
+}
+
+/* class that gets added by .js when active and removed when inactive */
+.submenu-active {
+    background-color: rgb(66, 47, 47);
+    border-radius: 3px;
+}
+
+/*
+    TABLET SCREENS
+        (min-width 700)
+*/
+
+/* Tablet menu */
+@media all and (min-width: 700px) {
+    /* justify-content
+        - Defines how the browser distributes space between and around content items along the main-axis
+           of a flex container, and the inline axis of a grid container.
+        - The alignment is done after the lengths and auto margins are applied, meaning that, 
+          if in a Flexbox layout there is at least one flexible element, with flex-grow different from 0, 
+          it will have no effect as there won't be any available space.
+           https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content
+        - It seems, it does not have an effect, probably because of other rules.
+    */
+    .menu {
+        justify-content: center;
+    }
+
+    /*
+        flex
+            - sets how a flex item will grow or shrink to fit the space available in its flex container.
+            - This property is a shorthand for the following CSS properties:
+                - flex-grow
+                - flex-shrink
+                - flex-basis
+            - One value, unitless number: flex-grow. flex-basis is then equal to 0.
+              https://developer.mozilla.org/en-US/docs/Web/CSS/flex
+    */
+    .logo {
+        flex: 1;
+    }
+
+    .item.button {
+        width: auto;
+        order: 1;
+        display: block;
+    }
+
+    .toggle {
+        flex: 1;
+        text-align: right;
+        order: 2;
+    }
+
+    /* Button up from tablet screen */
+    .menu li.button a {
+        padding: 10px 15px;
+        margin: 5px 0;
+    }
+
+    .button a {
+        background: #0080ff;
+        border: 1px royalblue solid;
+    }
+
+    .button.secondary {
+        border: 0;
+    }
+
+    .button.secondary a {
+        background: transparent;
+        border: 1px #0080ff solid;
+    }
+
+    .button a:hover {
+        text-decoration: none;
+    }
+
+    .button:not(.secondary) a:hover {
+        background: royalblue;
+        border-color: darkblue;
+    }
+}
+
+/*
+    DESKTOP SCREENS
+        (min-width 960)
+*/
+
+/* Desktop menu */
+@media all and (min-width: 960px) {
+    .menu {
+        align-items: flex-start;
+        flex-wrap: nowrap;
+        background: none;
+    }
+
+    .logo {
+        order: 0;
+    }
+
+    .item {
+        order: 1;
+        position: relative;
+        display: block;
+        width: auto;
+    }
+
+    .button {
+        order: 2;
+    }
+
+    .submenu-active .submenu {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 68px;
+        background: #111;
+    }
+
+    .toggle {
+        display: none;
+    }
+
+    .submenu-active {
+        border-radius: 0;
+    }
+}

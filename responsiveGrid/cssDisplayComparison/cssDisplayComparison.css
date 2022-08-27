@@ -1,0 +1,128 @@
+html {
+  background-color: aquamarine;
+  background-image: url("backgroundimage.jpg");
+  background-size: 4500px;
+  background-blend-mode:hard-light;
+  font-family: helvetica, arial, sans-serif;
+  letter-spacing: 1px;
+  padding-top: 10px;
+}
+
+body {
+  margin: 20px 180px;
+}
+
+article {
+  background-color: red;
+}
+
+article span {
+  background-color: black;
+  color: white;
+  margin: 1px;
+}
+
+article,
+span {
+  margin: 20px 10px;
+  padding: 10px;
+  border-radius: 7px;
+}
+
+section {
+  margin: 20px 10px;
+}
+
+
+p {
+  color: rgba(41, 15, 72, 0.991);
+  font-weight: 520;
+  font-size: 1.5;
+}
+
+/*
+  display
+    - flex
+  flex-flow
+    - row
+    - wrap
+*/
+.box {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  max-width: 70%;
+  border: 5px solid;
+  border-color:rgb(226, 43, 58);
+  
+}
+
+.box > div {
+  border: 3px solid;
+  border-color:rgb(3, 83, 5);
+}
+
+
+/*
+  display
+    - grid
+  grid-template-columns
+    - unit fr specifying the track's flex factor
+    - 2fr repeat(3, 1fr); box size 2, and three boxes size 1 (of total size 5)
+*/
+.gridwrapper {
+  border: 4px solid #3707f7;
+  border-radius: 5px;
+  background-color: #fff4e6;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* .gridwrapper *
+      - All desendents of .gridwrapper
+      - box-sizing
+        - border-box tells the browser to account for any border and padding 
+          in the values you specify for an element's width and height.
+        - content-box gives you the default CSS box-sizing behavior. 
+        - https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing
+*/
+.gridwrapper * {box-sizing: border-box;}
+
+/* all child boxes inside the wrapper */
+.gridbox {
+  border: 2px solid #ffa94d;
+  border-radius: 5px;
+  background-color: #ffd8a8;
+  padding: 1em;
+  color: #d9480f;
+}
+
+/*
+  .gridbox1 itself acting as grid for its nested children
+*/
+.gridbox1 {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  display: grid;
+  grid-template-columns: 3fr repeat(2, 1fr);
+}
+
+/* .gridbox1's children*/
+.gridbox1 > .nested {
+  border: 2px solid #ffec99;
+  border-radius: 5px;
+  background-color: #fff9db;
+  padding: 1em;
+}
+
+/* 
+  .gridbox2 gets column-start and grid-row-start and end
+    all other boxes fill the room
+*/
+.gridbox2 {
+  grid-column-start: 2;
+  grid-row-start: 3;
+  grid-row-end: 5;
+}
