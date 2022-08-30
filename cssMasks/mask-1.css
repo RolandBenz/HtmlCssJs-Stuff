@@ -1,0 +1,348 @@
+b {
+  font-weight: bold;
+}
+
+i {
+  font-style: italic;
+}
+
+/*1. */
+.item--clip .demo {
+  width: 200px;
+  height: 250px;
+}
+
+.item--clip .has-mask {
+  position: absolute;
+  clip: rect(10px, 190px, 190px, 10px);
+}
+
+/*2. */
+.item--css-clip-path img {
+  -webkit-clip-path: circle(100px at center);
+  clip-path: circle(100px at center);
+}
+
+/*3. & 5. */
+.item--svg-clip-path-svg image,
+.item--svg-clip-path-with-text-html img {
+  -webkit-clip-path: url(#clipping-with-text);
+  clip-path: url(#clipping-with-text);
+}
+
+/*4. */
+.item--svg-clip-path-html img {
+  -webkit-clip-path: url(#clipping);
+  clip-path: url(#clipping);
+}
+
+/*6. */
+.item--css-mask img {
+  mask-image: url(http://yoksel.github.io/Sandbox/img/tiles/tile-transparent-black.png),
+    linear-gradient(-45deg, black 20%, transparent 50%);
+  mask-repeat: space;
+}
+
+/*7. & 8. */
+.item--svg-mask-html img,
+.item--svg-mask-svg image {
+  mask: url(#masking);
+}
+
+/*9. */
+.item--css-background-clip .demo {
+  width: 200px;
+  height: 200px;
+  background: url(https://img-fotki.yandex.ru/get/5607/5091629.6b/0_612e6_b9039c0d_M.jpg)
+    no-repeat;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+/*10. */
+.item--svg-fill text {
+  fill: url(#pattern);
+}
+
+.demo,
+#clipping-with-text,
+#masking text {
+  font: bold italic 7em/1.5 Georgia;
+}
+
+/* Common 
+  ------------------------------------------- */
+BODY {
+  font: 12px/1.4 "Trebuchet MS", Arial, sans-serif;
+}
+
+A {
+  color: tomato;
+}
+
+H1,
+H2,
+H3,
+H4 {
+  margin-bottom: 1rem;
+  font-family: Georgia, serif;
+  line-height: 1.4;
+}
+
+H1 {
+  position: relative;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+  text-shadow: 1px 1px 0 white, 2px 2px 0 #555;
+  font-size: 4em;
+  font-style: italic;
+}
+H1:after {
+  content: "Live demo";
+  position: absolute;
+  margin-left: 5px;
+  padding: 1px 5px;
+  vertical-align: top;
+  border-radius: 5px;
+  background: paleturquoise;
+  white-space: nowrap;
+  text-shadow: none;
+  font-size: 1rem;
+  color: #fff;
+}
+
+H2 {
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid #333;
+  font-size: 2.8em;
+  color: #333;
+}
+
+H3 {
+  text-shadow: 1px 1px 0 white, 2px 2px 0 #ccc;
+  font-size: 2.5em;
+  font-style: italic;
+  color: #777;
+}
+
+H4 {
+  font-size: 1.6em;
+  font-style: italic;
+  color: #999;
+}
+
+/* code boxes 
+   - code:before for title like CSS or SVG
+   - .comment doesn't seem to be used    
+*/
+code {
+  display: block;
+  position: relative;
+  margin-bottom: 1rem;
+  overflow: auto;
+  max-width: 90%;
+  padding: 35px 10px 7px;
+  border-radius: 5px;
+}
+.comment code {
+  display: inline-block;
+  margin: 0;
+  padding: 2px 5px;
+  vertical-align: middle;
+  background: #eee;
+  color: #777;
+}
+code:before {
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 25px;
+  line-height: 25.2px;
+  padding-left: 10px;
+  position: absolute;
+  font-weight: bold;
+  font-style: italic;
+}
+.comment code:before {
+  content: none;
+}
+
+/*Hack in mask-1.js*/
+.prettyprint {
+  white-space: pre-wrap;
+}
+
+/* the code boxes for css 
+    - the title line with text CSS added with :before
+*/
+.code--css {
+  background: #f7edba;
+}
+.code--css:before {
+  content: "CSS";
+  background: #f2e18c;
+  color: #8a750f;
+}
+
+/*the code boxes for svg 
+  - the title line with text SVG added with :before
+*/
+.code--svg {
+  background: #e6f4be;
+}
+.code--svg:before {
+  content: "SVG";
+  background: #d6ec93;
+  color: #678217;
+}
+
+.svg-defs {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+/* top container of the Website inside body*/
+.wrapper {
+  width: 90%;
+  min-width: 500px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 0;
+  conter-reset: mylist;
+}
+.wrapper:after {
+  content: "";
+  display: table;
+  width: 100%;
+  clear: both;
+}
+
+/* boxes for the 10 items
+    - :before used to add item number with item counter mylist
+    - :after does not seem to have any effect
+*/
+.item {
+  position: relative;
+  margin-bottom: 2em;
+  padding-bottom: 2em;
+  padding-right: 3em;
+  border-bottom: 1px solid #ddd;
+  counter-increment: mylist;
+}
+.item:before {
+  content: counter(mylist);
+  position: absolute;
+  right: 0;
+  top: 0;
+  font: 2rem/1 Georgia, serif;
+  color: #eee;
+}
+.item:after {
+  content: "";
+  display: table;
+  width: 100%;
+}
+/*the part left with the flower images
+  - :before,  the original flower image as background
+  - opacity 7, transition: 0.7s
+  - change opacity of background image onHover of item
+*/
+.demo {
+  position: relative;
+  float: left;
+  margin-right: 30px;
+}
+.demo:before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -2;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: url(https://img-fotki.yandex.ru/get/5607/5091629.6b/0_612e6_b9039c0d_M.jpg)
+    no-repeat;
+  opacity: 0;
+  transition: 0.7s;
+}
+.item:hover .demo:before {
+  opacity: 0.4;
+}
+
+/* the right side of each item with the text and code*/
+.text {
+  padding-left: 230px;
+}
+
+/* Browsers
+   - the icons at the end of each item
+   - has-support gives more opacity
+   - browser:before to add the image with the icons and a 24x24px box
+   - the image has not the same order as shown on the webpage
+      for each browser the background image is moved to show the right icon
+  ------------------------------- */
+.browsers {
+  margin-top: 1.5rem;
+}
+
+.browser {
+  display: inline-block;
+  opacity: 0.2;
+}
+
+.has-support {
+  opacity: 1;
+}
+
+.browser:before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: 7px;
+  background: url(https://yoksel.github.io/assets/img/sprite-browsers.png) 0 0
+    no-repeat;
+  vertical-align: middle;
+}
+
+/* move the background image n pixels in -x direction (to the left)*/
+.firefox:before {
+  background-position: 0 0;
+}
+
+.chrome:before {
+  background-position: -30px 0;
+}
+
+.safari:before {
+  background-position: -60px 0;
+}
+
+.ie8:before {
+  background-position: -90px 0;
+}
+
+.ie9:before {
+  background-position: -90px 0;
+}
+
+.opera-13:before {
+  background-position: -120px 0;
+}
+
+.opera-12:before {
+  background-position: -150px 0;
+}
+
+.opera-mob:before {
+  background-position: -150px 0;
+}
+
+.opera-mini:before {
+  background-position: -150px 0;
+}
+

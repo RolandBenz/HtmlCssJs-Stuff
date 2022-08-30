@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Template</title>
+    <!-- JS inclusion -->
+    <script src="mask-3.js" defer></script>
+    <!-- CSS inclusion -->
+    <link rel="stylesheet" type="text/css" href="mask-3.css" media="all" />
+  </head>
+
+  <body>
+    <!-- Replace with your code from here -->
+    
+
+    <h1>The mask-image Property</h1>
+    <br />
+    <div class="box-1">
+      <h2>1.</h2>
+      <img
+        id="img-1"
+        class="clip-animation-1"
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/building-to-be-clipped.jpg"
+      />
+    </div>
+
+    <div class="box-2">
+      <h2>2.</h2>
+      <div class="div-2"></div>
+    </div>
+
+    <div class="box-3">
+      <h2>3.</h2>
+      <svg width="0" height="0">
+        <defs>
+          <linearGradient id="gradient" x1="0" y1="00%" x2="0" y2="100%">
+            <stop stop-color="black" offset="0" />
+            <stop stop-color="white" offset="1" />
+          </linearGradient>
+          <mask id="masking" maskUnits="objectBoundingBox" maskContentUnits="objectBoundingBox">
+            <rect y="0.3" width="1" height=".7" fill="url(#gradient)" />
+            <circle cx=".5" cy=".5" r=".35" fill="white" />
+          </mask>
+        </defs>
+      </svg>
+      <img id="img-3" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/Harry-Potter-1-.jpg"/>
+    </div>
+
+    <div class="box-4">
+      <h2>4.</h2>
+      <img id="img-4" class="svg-normal-mask-4" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/Harry-Potter-1-.jpg" alt=""  />
+      <img id="img-4" class="svg-normal-mask-4" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/Harry-Potter-1-.jpg" alt=""  />
+    </div>
+
+
+    <!-- to here -->
+  </body>
+</html>

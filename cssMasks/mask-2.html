@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        html{background-image: url("backgroundimage.jpg"); color:cadetblue;}
+        body{margin: 50px auto; max-width:90%; display:flex; flex-flow: row wrap;}
+        h1{color:rgb(5, 16, 87); width:100%; }
+        h2, h3 {color:rgb(5, 68, 87)}
+        .box-1 {display: block; max-width: 25%; min-width:200px; overflow: hidden;}
+        .box-2 {display: block; max-width: 25%; min-width:200px; overflow: hidden;}
+        .box-3 {display: block; max-width: 25%; min-width:200px; overflow: hidden;}
+        .box-4 {display: block; max-width: 25%; min-width:200px; overflow: hidden;}
+        .mask-3 {mask-image: radial-gradient(ellipse, black 50%, rgba(0, 0, 0, 0.2) 50%); -webkit-mask-image:radial-gradient(ellipse, black 50%, rgba(0, 0, 0, 0.2) 50%);}
+        /*
+            - for png and svg
+            - mask-image: url() does not work with internet urls, even in Firefox
+            - -webkit-mask-image: url() works with internet urls, even in Firefox
+            - -webkit-mask-image/mask-image: url() work both in Firefox with local uri's only if
+                - about:config
+                - security.fileuri.strict_origin_policy = false (default is true)
+            .mask-4 {mask-image: url("mask-zebra.png");}  
+        */
+        .mask-4{-webkit-mask-image: url(http://yoksel.github.io/Sandbox/img/tiles/tile-transparent-black.png);}
+    </style>
+</head>
+<body>
+    <h1>The mask-image Property</h1><br/>
+    <div class="box-1">
+        <h2>1.</h2>
+        <h3>Original image</h3>
+        <img src="image.jpg" alt="nature" width="120em" height="auto">
+        <h3>An SVG mask layer (star and triangle)</h3>
+        <p>use viewBox to scale and reposition an svg.</p>
+        <p> https://css-tricks.com/scale-svg/ </p>
+        <!-- use the viewBox for scaling and repositioning -->
+        <div id="scalebox">
+            <svg viewBox="600 0 450 1200" width="600" height="400">
+                <mask id="svgmask-1">
+                    <polygon fill="#ffffff" points=" 20 300, 250 0, 450 300"></polygon>
+                </mask>
+                <mask id="svgmask-2">
+                    <polygon fill="#ffffff" points="100,10 40,198 190,78 10,78 160,198"></polygon>
+                </mask>
+                <image href="image.jpg" mask="url(#svgmask-1)"></image>
+                <image href="image.jpg" mask="url(#svgmask-2)"></image>
+            </svg>
+        </div>
+    </div>
+    <div class="box-2">
+        <h2>2.</h2>
+        <h3>Original image</h3>
+        <img src="image.jpg" alt="nature" width="120em" height="auto">
+        <h3>An SVG mask layer (star and triangle)</h3>
+        <p>use viewBox to scale and reposition an svg.</p>
+        <p> https://css-tricks.com/scale-svg/ </p>
+        <!-- use the viewBox for scaling and repositioning -->
+        <svg viewBox="600 0 450 1200" width="600" height="400">
+            <mask id="svgmask-3">
+                <polygon fill="#ffffff" points=" 20 300, 250 0, 450 300"></polygon>
+                <circle fill="#ffffff" cx="250" cy="150" r="150"></circle>
+            </mask>
+            <mask id="svgmask-4">
+                <polygon fill="#ffffff" points="100,10 40,198 190,78 10,78 160,198"></polygon>
+            </mask>
+            <image href="image.jpg" mask="url(#svgmask-3)"></image>
+            <image href="image.jpg" mask="url(#svgmask-4)"></image>
+        </svg>
+    </div>
+    <div class="box-3">
+        <h2>3.</h2>
+        <h3>Original image</h3>
+        <img src="image-3.jpg" alt="Cinque Terre" width="120" height="auto">
+        <h3>A radial gradient as a mask layer (a circle)</h3>
+        <p>Also visit mdn website.</p>
+        <p>https://developer.mozilla.org/en-US/docs/Web/CSS/mask-image</p>
+        <div class="mask-3">
+            <img src="image-3.jpg" alt="Cinque Terre" width="90%" height="auto">
+        </div>
+    </div>
+    <div class="box-4">
+        <h2>4.</h2>
+        <h3>Original image</h3>
+        <img src="image-3.jpg" alt="Cinque Terre" width="120" height="auto">
+        <h3>A radial gradient as a mask layer (a circle)</h3>
+        <p>Also visit mdn website.</p>
+        <p>https://developer.mozilla.org/en-US/docs/Web/CSS/mask-image</p>
+        <div class="mask-4">
+            <img src="image-3.jpg" alt="Cinque Terre" width="90%" height="auto">
+        </div>
+    </div>
+
+</body>
+</html>
