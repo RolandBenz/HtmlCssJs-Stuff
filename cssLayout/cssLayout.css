@@ -263,7 +263,6 @@ FOOTER {
 
 /* Boxes of Container-2
   ------------------------------------------- */
-
 #container-2 #box-1 {
   /* Center children horizontally*/
   display: flex;
@@ -377,12 +376,20 @@ FOOTER {
   flex-flow: row wrap;
 }
 
+.js_box-1_p{
+  text-align: start;
+}
+
 #container-3 #box-2 {
   /* Center children horizontally*/
   display: flex;
   justify-content: end;
   /*shorthand property for flex-direction and flex-wrap*/
   flex-flow: row wrap;
+}
+
+.js_box-2_p{
+  text-align: end;
 }
 
 #container-3 #box-3 {
@@ -393,12 +400,20 @@ FOOTER {
   flex-flow: row wrap;
 }
 
+.js_box-3_p{
+  text-align: left;
+}
+
 #container-3 #box-4 {
   /* Center children horizontally*/
   display: flex;
   justify-content: right;
   /*shorthand property for flex-direction and flex-wrap*/
   flex-flow: row wrap;
+}
+
+.js_box-4_p{
+  text-align: right;
 }
 
 #container-3 #box-5 {
@@ -409,12 +424,20 @@ FOOTER {
   flex-flow: row wrap;
 }
 
+.js_box-5_p{
+  text-align: center;
+}
+
 #container-3 #box-6 {
   /* Center children horizontally*/
   display: flex;
   justify-content: stretch;
   /*shorthand property for flex-direction and flex-wrap*/
   flex-flow: row wrap;
+}
+
+.js_box-6_p{
+  text-align: left;
 }
 
 #container-3 #box-7 {
@@ -425,6 +448,10 @@ FOOTER {
   flex-flow: row wrap;
 }
 
+.js_box-7_p{
+  text-align: center;
+}
+
 #container-3 #box-8 {
   /* Center children horizontally*/
   display: flex;
@@ -433,12 +460,20 @@ FOOTER {
   flex-flow: row wrap;
 }
 
+.js_box-8_p{
+  text-align: center;
+}
+
 #container-3 #box-9 {
   /* Center children horizontally*/
   display: flex;
   justify-content: space-evenly;
   /*shorthand property for flex-direction and flex-wrap*/
   flex-flow: row wrap;
+}
+
+.js_box-9_p{
+  text-align: center;
 }
 
 /* Children of container-3
