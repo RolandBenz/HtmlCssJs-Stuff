@@ -1,0 +1,630 @@
+/* your snippet */
+
+/* Global variables 
+  ------------------------------------------- */
+/*
+  - Set global variable within :root as --name:value pair
+  - Use them anywhere with var(--name)
+  - Use them anywhere with var(--name, value), 
+    value is the fallback-value, in case --name is not found
+  - Override them anywhere locally with -name: value;
+  - Use and change them also in @media
+  - Use or change them in javascript
+      - Get the root element in javascript
+        var root = document.querySelector(':root');
+        var rootstyle = getComputedStyle(root);
+      - Get the value
+        rootstyle.getPropertyValue('--name')
+        getComputedStyle(root).getPropertyValue('--name')
+        getComputedStyle(document.documentElement).getPropertyValue('--name');
+      - Set a new value in javascript
+        root.style.setProperty('--name', 'value');
+        document.documentElement.style.setProperty('--name', 'value');
+
+  
+*/
+:root {
+  --background-color: #00529f84;
+  --h1-text-shadow-color: #555;
+  --h1-after-background-color: paleturquoise;
+  --h2-text-shadow-color: #ccc;
+  --h2-color: #777;
+  --footer-color: #777;
+  --footer-text-shadow-color: #ccc;
+  --border-bottom-color: rgb(108, 108, 108);
+  --container-border-color: rgb(108, 108, 108);
+  --box-border-color: rgb(108, 108, 108);
+}
+
+/* Common 
+  ------------------------------------------- */
+
+HTML {
+  background-color: var(--background-color);
+  background-image: url("backgroundimage.jpg");
+  background-size: 100% 100%;
+  background-blend-mode: luminosity;
+}
+
+BODY {
+  /* Font 
+      font size (pixels) / the line height (relative to font size so 12 x 1.5) 
+      and then the font family name
+      - font: 12px/1.4 "Trebuchet MS", Arial, sans-serif;
+  */
+  font-family: "Roboto", "Trebuchet MS", "Open Sans", sans-serif;
+  font-size: 110%;
+  /*do not use px, like 18px;*/
+  line-height: 1.6rem;
+  /*use at least 1.5em; normal=18px=112%=1.12=1.12em*/
+  font-weight: 400;
+  /*boldness of characters*/
+}
+
+H1 {
+  /* Font 
+      - familiy/style/size
+      - line-height: 1.4; == 1.4em, 1.4rem, 140%
+      - text shadow
+  */
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 4em;
+  line-height: 1.4;
+  text-shadow: 1px 1px 0 white, 2px 2px 0 var(--h1-text-shadow-color);
+}
+
+H1 {
+  /* Center Header horizontally */
+  text-align: center;
+  /* underline with border-line */
+  width: 80%;
+  margin: 2rem auto;
+  /* to center width use with margin: auto*/
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-bottom-color);
+}
+
+H1:after {
+  /* Live Demo Box */
+  content: "Live demo";
+  position: absolute;
+  margin-left: 5px;
+  padding: 1px 5px;
+  vertical-align: top;
+  border-radius: 5px;
+  background: var(--h1-after-background-color);
+  white-space: nowrap;
+  text-shadow: none;
+  font-size: 1rem;
+  color: #fff;
+}
+
+H2 {
+  /* Center Header horizontally*/
+  text-align: center;
+}
+
+H2 {
+  /* Font 
+      - familiy/style/size
+      - line-height: 1.4; == 1.4em, 1.4rem, 140%
+      - color
+      - text shadow
+  */
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 2.5em;
+  line-height: 1.4;
+  color: var(--h2-color);
+  text-shadow: 1px 1px 0 white, 2px 2px 0 var(--h2-text-shadow-color);
+}
+
+FOOTER {
+  /* to center box with reduced width, use margin: auto*/
+  width: 80%;
+  margin: 8rem auto;
+  margin-bottom: 14rem;
+  text-align: right;
+  /* Font 
+      - familiy/style/size
+      - line-height: 1.4; == 1.4em, 1.4rem, 140%
+      - color
+      - text shadow
+  */
+  font-family: Georgia, serif;
+  font-size: 1.5em;
+  line-height: 1.4;
+  color: var(--footer-color);
+  text-shadow: 1px 1px 0 white, 2px 2px 0 var(--footer-text-shadow-color);
+}
+
+/* Container 
+  ------------------------------------------- */
+
+.container {
+  /* box model margin */
+  margin: 5% 10% 5% 10%;
+  /* show box with border-line */
+  border: 1px dotted var(--container-border-color);
+}
+
+.container {
+  /* underline with border-line */
+  margin-bottom: 2em;
+  padding-bottom: 2em;
+  border-bottom: 1px solid var(--container-border-color);
+  /* .container counter variable; position: relative is needed */
+  position: relative;
+  counter-increment: containerCounter;
+}
+
+.container:before {
+  /* add .container counter */
+  content: counter(containerCounter);
+  position: absolute;
+  right: 0;
+  top: 0;
+  font: 2rem/1 Georgia, serif;
+  color: #eee;
+}
+
+/* Box
+  ------------------------------------------- */
+
+.box {
+  border: 1px dotted var(--box-border-color);
+  /* to center box with reduced width, use margin: auto*/
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* Box and Buttons to change Box width
+  ------------------------------------------- */
+.container #box-10 {
+  /* Center children horizontally*/
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.button-box-width-small {
+  background-color: #fbfad3;
+  margin-left: 0.1rem;
+  margin-right: 0.1rem;
+}
+
+.button-box-width-medium {
+  background-color: #fbfad3;
+  margin-left: 0.1rem;
+  margin-right: 0.1rem;
+}
+
+.button-box-width-large {
+  background-color: #fbfad3;
+  margin-left: 0.1rem;
+  margin-right: 0.1rem;
+}
+
+
+/* Boxes of Container-1
+  ------------------------------------------- */
+
+#container-1 #box-1 {
+  color: darkgreen;
+}
+
+#container-1 #box-2 {
+  color: darkgreen;
+}
+
+#container-1 #box-3 {
+  color: darkgreen;
+}
+
+#container-1 #box-4 {
+  color: darkgreen;
+}
+
+#container-1 #box-5 {
+  color: darkgreen;
+}
+
+#container-1 #box-6 {
+  color: darkgreen;
+}
+
+/* Children of container-1
+  ------------------------------------------- */
+#container-1 #box-1 p {
+  text-align: start;
+}
+
+#container-1 #box-2 p {
+  text-align: end;
+}
+
+#container-1 #box-3 p {
+  text-align: left;
+}
+
+#container-1 #box-4 p {
+  text-align: right;
+}
+
+#container-1 #box-5 p {
+  text-align: center;
+}
+
+#container-1 #box-6 p {
+  text-align: justify;
+}
+
+/* Boxes of Container-2
+  ------------------------------------------- */
+
+#container-2 #box-1 {
+  /* Center children horizontally*/
+  display: flex;
+  justify-content: start;
+  /*shorthand property for flex-direction and flex-wrap*/
+  flex-flow: row wrap;
+}
+
+#container-2 #box-2 {
+  /* Center children horizontally*/
+  display: flex;
+  justify-content: end;
+  /*shorthand property for flex-direction and flex-wrap*/
+  flex-flow: row wrap;
+}
+
+#container-2 #box-3 {
+  /* Center children horizontally*/
+  display: flex;
+  justify-content: left;
+  /*shorthand property for flex-direction and flex-wrap*/
+  flex-flow: row wrap;
+}
+
+#container-2 #box-4 {
+  /* Center children horizontally*/
+  display: flex;
+  justify-content: right;
+  /*shorthand property for flex-direction and flex-wrap*/
+  flex-flow: row wrap;
+}
+
+#container-2 #box-5 {
+  /* Center children horizontally*/
+  display: flex;
+  justify-content: center;
+  /*shorthand property for flex-direction and flex-wrap*/
+  flex-flow: row wrap;
+}
+
+#container-2 #box-6 {
+  /* Center children horizontally*/
+  display: flex;
+  justify-content: stretch;
+  /*shorthand property for flex-direction and flex-wrap*/
+  flex-flow: row wrap;
+}
+
+#container-2 #box-7 {
+  /* Center children horizontally*/
+  display: flex;
+  justify-content: space-around;
+  /*shorthand property for flex-direction and flex-wrap*/
+  flex-flow: row wrap;
+}
+
+#container-2 #box-8 {
+  /* Center children horizontally*/
+  display: flex;
+  justify-content: space-between;
+  /*shorthand property for flex-direction and flex-wrap*/
+  flex-flow: row wrap;
+}
+
+#container-2 #box-9 {
+  /* Center children horizontally*/
+  display: flex;
+  justify-content: space-evenly;
+  /*shorthand property for flex-direction and flex-wrap*/
+  flex-flow: row wrap;
+}
+
+
+/* Children of container-2
+  ------------------------------------------- */
+
+.button {
+  min-width: 80px;
+  max-width: 15%;
+}
+
+.button-1 {
+  background-color: #4caf50;
+}
+
+.button-2 {
+  background-color: #008cba;
+}
+
+.button-3 {
+  background-color: #f44336;
+}
+
+.button-4 {
+  background-color: #e7e7e7;
+}
+
+.button-5 {
+  background-color: #555555;
+}
+
+
+/* Boxes of Container-3
+  ------------------------------------------- */
+
+#container-3 #box-1 {
+  /* Center children horizontally*/
+  display: flex;
+  justify-content: start;
+  /*shorthand property for flex-direction and flex-wrap*/
+  flex-flow: row wrap;
+}
+
+#container-3 #box-2 {
+  /* Center children horizontally*/
+  display: flex;
+  justify-content: end;
+  /*shorthand property for flex-direction and flex-wrap*/
+  flex-flow: row wrap;
+}
+
+#container-3 #box-3 {
+  /* Center children horizontally*/
+  display: flex;
+  justify-content: left;
+  /*shorthand property for flex-direction and flex-wrap*/
+  flex-flow: row wrap;
+}
+
+#container-3 #box-4 {
+  /* Center children horizontally*/
+  display: flex;
+  justify-content: right;
+  /*shorthand property for flex-direction and flex-wrap*/
+  flex-flow: row wrap;
+}
+
+#container-3 #box-5 {
+  /* Center children horizontally*/
+  display: flex;
+  justify-content: center;
+  /*shorthand property for flex-direction and flex-wrap*/
+  flex-flow: row wrap;
+}
+
+#container-3 #box-6 {
+  /* Center children horizontally*/
+  display: flex;
+  justify-content: stretch;
+  /*shorthand property for flex-direction and flex-wrap*/
+  flex-flow: row wrap;
+}
+
+#container-3 #box-7 {
+  /* Center children horizontally*/
+  display: flex;
+  justify-content: space-around;
+  /*shorthand property for flex-direction and flex-wrap*/
+  flex-flow: row wrap;
+}
+
+#container-3 #box-8 {
+  /* Center children horizontally*/
+  display: flex;
+  justify-content: space-between;
+  /*shorthand property for flex-direction and flex-wrap*/
+  flex-flow: row wrap;
+}
+
+#container-3 #box-9 {
+  /* Center children horizontally*/
+  display: flex;
+  justify-content: space-evenly;
+  /*shorthand property for flex-direction and flex-wrap*/
+  flex-flow: row wrap;
+}
+
+/* Children of container-3
+  ------------------------------------------- */
+#container-3 .childbox {
+  /* center text */
+  text-align: center;
+  /* min-width and max-width*/
+  min-width: 80px;
+  max-width: 15%;
+}
+
+#container-3 .childbox-1 {
+  background-color: green;
+}
+
+#container-3 .childbox-2 {
+  background-color: blue;
+}
+
+#container-3 .childbox-3 {
+  background-color: red;
+}
+
+#container-3 .childbox-4 {
+  background-color: gray;
+}
+
+#container-3 .childbox-5 {
+  background-color: yellow;
+}
+
+
+/* Boxes of Container-4
+  ------------------------------------------- */
+
+#container-4 #box-1 {
+  /* Center children horizontally*/
+  display: flex;
+  justify-content: start;
+}
+
+#container-4 #box-2 {
+  /* Center children horizontally*/
+  display: flex;
+  justify-content: end;
+}
+
+#container-4 #box-3 {
+  /* Center children horizontally*/
+  display: flex;
+  justify-content: left;
+}
+
+#container-4 #box-4 {
+  /* Center children horizontally*/
+  display: flex;
+  justify-content: right;
+}
+
+#container-4 #box-5 {
+  /* Center children horizontally*/
+  display: flex;
+  justify-content: center;
+}
+
+#container-4 #box-6 {
+  /* Center children horizontally*/
+  display: flex;
+  justify-content: stretch;
+}
+
+#container-4 #box-7 {
+  /* Center children horizontally*/
+  display: flex;
+  justify-content: space-around;
+}
+
+#container-4 #box-8 {
+  /* Center children horizontally*/
+  display: flex;
+  justify-content: space-between;
+}
+
+#container-4 #box-9 {
+  /* Center children horizontally*/
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* Children of container-4
+  ------------------------------------------- */
+#container-4 .childbox {
+  /* center text */
+  text-align: center;
+  /* min-width and max-width*/
+  min-width: 80px;
+  max-width: 15%;
+}
+
+#container-4 .childbox-1 {
+  background-color: green;
+}
+
+#container-4 .childbox-2 {
+  background-color: blue;
+}
+
+#container-4 .childbox-3 {
+  background-color: red;
+}
+
+#container-4 .childbox-4 {
+  background-color: gray;
+}
+
+#container-4 .childbox-5 {
+  background-color: yellow;
+}
+
+
+/* Boxes of Container-5
+  ------------------------------------------- */
+
+#container-5 #box-1 {
+  /* Center children horizontally*/
+  display: flex;
+  justify-content: center;
+}
+
+#container-5 #box-2 {
+  /* Center children horizontally*/
+  display: flex;
+  justify-content: center;
+}
+
+#container-5 #box-3 {
+  /* Center children horizontally*/
+  display: flex;
+  justify-content: center;
+}
+
+#container-5 #box-4 {
+  /* Center children horizontally*/
+  display: flex;
+  justify-content: center;
+}
+
+#container-5 #box-5 {
+  /* Center children horizontally*/
+  display: flex;
+  justify-content: center;
+}
+
+#container-5 #box-6 {
+  /* Center children horizontally*/
+  display: flex;
+  justify-content: center;
+}
+
+/* Children of container-5
+  ------------------------------------------- */
+#container-5 .childbox {
+  /* center text */
+  text-align: center;
+  /* min-width and max-width*/
+  min-width: 80px;
+  max-width: 15%;
+}
+
+#container-5 .childbox-1 {
+  background-color: green;
+}
+
+#container-5 .childbox-2 {
+  background-color: blue;
+}
+
+#container-5 .childbox-3 {
+  background-color: red;
+}
+
+#container-5 .childbox-4 {
+  background-color: gray;
+}
+
+#container-5 .childbox-5 {
+  background-color: yellow;
+}
