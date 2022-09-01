@@ -207,8 +207,13 @@ FOOTER {
   margin-right: 0.1rem;
 }
 
+/*
+  ------------------------------------------- 
+  CONTENT
+  ------------------------------------------- 
+*/
 
-/* Boxes of Container-1
+/* 1. Boxes of Container-1
   ------------------------------------------- */
 
 #container-1 #box-1 {
@@ -235,7 +240,7 @@ FOOTER {
   color: darkgreen;
 }
 
-/* Children of container-1
+/* 1.1 Children of container-1
   ------------------------------------------- */
 #container-1 #box-1 p {
   text-align: start;
@@ -261,7 +266,7 @@ FOOTER {
   text-align: justify;
 }
 
-/* Boxes of Container-2
+/* 2. Boxes of Container-2
   ------------------------------------------- */
 #container-2 #box-1 {
   /* Center children horizontally*/
@@ -336,7 +341,7 @@ FOOTER {
 }
 
 
-/* Children of container-2
+/* 2.1 Children of container-2
   ------------------------------------------- */
 
 .button {
@@ -365,7 +370,7 @@ FOOTER {
 }
 
 
-/* Boxes of Container-3
+/* 3. Boxes of Container-3
   ------------------------------------------- */
 
 #container-3 #box-1 {
@@ -476,7 +481,7 @@ FOOTER {
   text-align: center;
 }
 
-/* Children of container-3
+/* 3.1 Children of container-3
   ------------------------------------------- */
 #container-3 .childbox {
   /* center text */
@@ -507,7 +512,7 @@ FOOTER {
 }
 
 
-/* Boxes of Container-4
+/* 4. Boxes of Container-4
   ------------------------------------------- */
 
 #container-4 #box-1 {
@@ -564,7 +569,7 @@ FOOTER {
   justify-content: space-evenly;
 }
 
-/* Children of container-4
+/* 4.1 Children of container-4
   ------------------------------------------- */
 #container-4 .childbox {
   /* center text */
@@ -595,7 +600,7 @@ FOOTER {
 }
 
 
-/* Boxes of Container-5
+/* 5. Boxes of Container-5
   ------------------------------------------- */
 
 #container-5 #box-1 {
@@ -634,7 +639,7 @@ FOOTER {
   justify-content: center;
 }
 
-/* Children of container-5
+/* 5.1 Children of container-5
   ------------------------------------------- */
 #container-5 .childbox {
   /* center text */

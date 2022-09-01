@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Snippet Page</title>
+  <!-- JS inclusion -->
+  <script src="cssLayout-1.js" defer></script>
+  <!-- CSS inclusion -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" media="all" />
+  <link rel="stylesheet" type="text/css" href="cssLayout-1.css" media="screen" />
+</head>
+
+<body>
+  <!-- your snippet -->
+
+  <header>
+    <div class="header-image-container">
+      <img src="header-image.jpg" height="150px" width="100%" alt="header image" />
+      <div class="header-image-caption header-image-center">
+        <h2>Scroll Down</h2>
+        <p>Scroll down to see the sticky effect.</p>
+      </div>
+    </div>
+  </header>
+
+  <nav class="sticky">
+    <ul class="menu">
+      <li class="logo"><a href="#">Ro Benzino</a></li>
+      <li class="item"><a href="#">Home</a></li>
+      <li class="item"><a href="#">About</a></li>
+      <li class="item"><a href="#">Blog</a></li>
+      <li class="item" id="contact"><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+
+  <div class="container">
+
+    <h1>1. Simple flex example</h1>
+    <div class="wrapper-flex">
+      <div class="box-flex box1-flex">One</div>
+      <div class="box-flex box2-flex">Two</div>
+      <div class="box-flex box3-flex">Three</div>
+    </div>
+
+    <h1>2. Simple grid example</h1>
+    <div class="wrapper-grid">
+      <div class="box-grid box-grid-a box1-grid-a">One</div>
+      <div class="box-grid box-grid-a box2-grid-a">Two</div>
+      <div class="box-grid box-grid-a box3-grid-a">Three</div>
+      <div class="box-grid box-grid-a box4-grid-a">Four</div>
+      <div class="box-grid box-grid-a box5-grid-a">Five</div>
+      <div class="box-grid box-grid-a box6-grid-a">Six</div>
+    </div>
+
+    <h1>3. Another simple grid example</h1>
+    <div class="wrapper-grid">
+      <div class="box-grid box-grid-b box1-grid-b">One</div>
+      <div class="box-grid box-grid-b box2-grid-b">Two</div>
+      <div class="box-grid box-grid-b box3-grid-b">Three</div>
+    </div>
+
+    <h1>4. Simple float example</h1>
+    <div class="box-float box-float-a">Float</div>
+    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus aliquam dolor, eu lacinia lorem placerat
+      vulputate. Duis felis orci, pulvinar id metus ut, rutrum luctus orci. Cras porttitor imperdiet nunc, at ultricies
+      tellus laoreet sit amet. Sed auctor cursus massa at porta. Integer ligula ipsum, tristique sit amet orci vel,
+      viverra egestas ligula. Curabitur vehicula tellus neque, ac ornare ex malesuada et. In vitae convallis lacus.
+      Aliquam erat volutpat. Suspendisse ac imperdiet turpis. Aenean finibus sollicitudin eros pharetra congue. Duis
+      ornare egestas augue ut luctus. Proin blandit quam nec lacus varius commodo et a urna. Ut id ornare felis, eget
+      fermentum sapien.</p>
+
+    <h1>5. Simple positioning example</h1>
+    <div class="positioning">
+      <p>I am a basic block level element.</p>
+      <p>I am a basic block level element.</p>
+      <p>I am a basic block level element.</p>
+    </div>
+
+    <h1>6. Relative positioning example</h1>
+    <div class="positioning">
+      <p>I am a basic block level element.</p>
+      <p class="positioned-relative">I am a basic block level element.</p>
+      <p>I am a basic block level element.</p>
+    </div>
+
+    <h1>7. Absolute positioning example</h1>
+    <div class="positioning">
+      <div style="position:relative">
+        <p>I am a basic block level element.</p>
+        <p class="positioned-absolute">I am a basic block level element.</p>
+        <p>I am a basic block level element.</p>
+      </div>
+    </div>
+
+    <h1>8. Fixed positioning example</h1>
+    <div class="positioning">
+      <div class="positioned-fixed">8. Fixed</div>
+      <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Nulla luctus aliquam dolor, eu lacinia lorem placerat vulputate. Duis felis
+      orci, pulvinar id metus ut, rutrum luctus orci.</p>
+      <p> Cras porttitor imperdiet nunc, at ultricies tellus laoreet sit amet.
+      Sed auctor cursus massa at porta. Integer ligula ipsum, tristique sit amet
+      orci vel, viverra egestas ligula. Curabitur vehicula tellus neque, ac ornare
+      ex malesuada et.</p>
+      <p> In vitae convallis lacus. Aliquam erat volutpat. Suspendisse ac
+      imperdiet turpis. Aenean finibus sollicitudin eros pharetra congue. Duis
+      ornare egestas augue ut luctus. Proin blandit quam nec lacus varius commodo
+      et a urna. Ut id ornare felis, eget fermentum sapien.</p>
+    </div>
+
+
+    <h1>9 Sticky positioning</h1>
+    <div class="positioning">
+      <div class="positioned-sticky center-sticky">9. Sticky</div>
+      <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        Nulla luctus aliquam dolor, eu lacinia lorem placerat vulputate. 
+        Duis felis orci, pulvinar id metus ut, rutrum luctus orci. 
+        Cras porttitor imperdiet nunc, at ultricies tellus laoreet sit amet. Sed auctor cursus massa at porta. 
+        Integer ligula ipsum, tristique sit amet orci vel, viverra egestas ligula. 
+        Curabitur vehicula tellus neque, ac ornare ex malesuada et. In vitae convallis lacus. 
+        Aliquam erat volutpat. Suspendisse ac imperdiet turpis. Aenean finibus sollicitudin eros pharetra congue. 
+        Duis ornare egestas augue ut luctus. Proin blandit quam nec lacus varius commodo et a urna. 
+        Ut id ornare felis, eget fermentum sapien.</p> 
+      <p> Nam vulputate diam nec tempor bibendum. Donec luctus augue eget malesuada ultrices. 
+        Phasellus turpis est, posuere sit amet dapibus ut, facilisis sed est. 
+        Nam id risus quis ante semper consectetur eget aliquam lorem. 
+        Vivamus tristique elit dolor, sed pretium metus suscipit vel. Mauris ultricies lectus sed lobortis finibus. 
+        Vivamus eu urna eget velit cursus viverra quis vestibulum sem. Aliquam tincidunt eget purus in interdum. 
+        Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>  
+      <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        Nulla luctus aliquam dolor, eu lacinia lorem placerat vulputate. 
+        Duis felis orci, pulvinar id metus ut, rutrum luctus orci. 
+        Cras porttitor imperdiet nunc, at ultricies tellus laoreet sit amet. 
+        Sed auctor cursus massa at porta. Integer ligula ipsum, tristique sit amet orci vel, viverra egestas ligula. 
+        Curabitur vehicula tellus neque, ac ornare ex malesuada et. In vitae convallis lacus. Aliquam erat volutpat. 
+        Suspendisse ac imperdiet turpis. Aenean finibus sollicitudin eros pharetra congue. 
+        Duis ornare egestas augue ut luctus. Proin blandit quam nec lacus varius commodo et a urna. 
+        Ut id ornare felis, eget fermentum sapien.</p>
+    </div>
+ 
+  </div>
+
+
+
+
+
+  <!-- your snippet -->
+</body>
+
+</html>
