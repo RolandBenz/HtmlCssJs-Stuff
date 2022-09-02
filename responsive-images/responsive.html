@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Responsive HTML images demo</title>
+    <style>
+      html {
+        font-family: sans-serif;
+        background-color: gray;
+      }
+
+      body {
+        max-width: 1200px;
+        margin: 0 auto;
+        background-color: white;
+      }
+
+      header {
+        background: url(header.jpg) no-repeat center;
+        height: 200px;
+      }
+
+      section {
+        padding: 20px;
+      }
+
+      p {
+        line-height: 1.5;
+      }
+
+      img {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <section>
+        <h1>My website</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget venenatis ligula. Ut lacinia at dolor vitae pulvinar. Aliquam pretium dignissim eros. Integer faucibus, dui non aliquet bibendum, lectus orci lobortis odio, ornare porttitor est tellus eget velit. Nulla eros elit, malesuada id neque vel, viverra vehicula neque. Nullam auctor turpis non leo iaculis finibus. Quisque blandit arcu venenatis libero tempor, ac pulvinar ligula dapibus.</p>
+        <!-- Art direction: Serve cropped images for different layouts
+            https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images
+            - to switch between close portrait on small screens and the whole image on large screens
+            - img src=... is loaded if Browser cannot read the source tags
+          -->
+        <picture>
+          <source media="(max-width: 799px)" srcset="elva-480w-close-portrait.jpg">
+          <source media="(min-width: 800px)" srcset="elva-800w.jpg">
+          <img src="elva-800w.jpg" alt="Chris standing up holding his daughter Elva">
+        </picture>
+        <p>Suspendisse potenti. Ut in luctus eros. Mauris pulvinar vehicula aliquet. Etiam imperdiet eleifend luctus. Duis ut justo nec eros ornare consectetur. Vestibulum convallis condimentum varius. Maecenas rutrum porta varius. Phasellus volutpat sem id sagittis luctus. Morbi vitae quam vitae nisi iaculis dignissim.</p>
+         <!--Resolution switching: to serve smaller image files to narrow-screen devices, as they don't need
+                                   huge images like desktop displays do — and to serve different resolution
+                                   images to high density/low density screens. 
+                                   You can solve this problem using vector graphics (SVG images) 
+                                   and the srcset with sizes attributes.
+            https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images
+            - to switch between whole images differently scaled for small screens and large screens
+            - The image's intrinsic width in pixels (480w) — 
+              note that this uses the w unit, not px as you might expect. 
+              An image's intrinsic size is its real size, which can be found by inspecting the image file 
+              on your computer
+            - sizes = (media-condition) if-true, (media-condition) if-true , ...,  if-no-condition-applies 800px
+          -->
+        <img srcset="elva-fairy-480w.jpg 480w,
+                     elva-fairy-800w.jpg 800w"
+             sizes="(max-width: 600px) 480px,
+                    800px"
+             src="elva-fairy-800w.jpg" alt="Elva dressed as a fairy">
+        <p>Header image originally by <a href="https://www.flickr.com/photos/miwok/17086751527/">Miwok</a>.</p>
+      </section>
+    </main>
+  </body>
+</html>
