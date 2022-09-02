@@ -96,6 +96,12 @@ img {
 	display: block;
 }
 
+/*CODEPEN.IO*/
+.codepenio {
+	width: 90%;
+	margin: 0 auto;
+}
+
 /*Footer*/
 FOOTER {
 	--footer-color: #777;

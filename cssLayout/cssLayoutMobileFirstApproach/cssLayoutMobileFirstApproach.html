@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Media Queries: a simple mobile first design, step 1</title>
+  <!-- Viewport Meta Tag 
+        - https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Media_queries
+        - It exists as a way to control how mobile browsers render content. 
+          This is needed because by default, most mobile browsers lie about their viewport width. 
+          Non-responsive sites commonly look really bad when rendered in a narrow viewport, 
+          so mobile browsers usually render the site with a viewport width wider than the real device width 
+          by default (usually 980 pixels), and then shrink the rendered result so that it fits in the display.
+
+          This is all well and good, but it means that responsive sites are not going to work as expected. 
+          If the viewport width is reported as 980 pixels, then mobile layouts (for example created  
+          using a media query of @media screen and (max-width: 600px) { }) are not going to render as expected.
+
+          To remedy this, including a viewport meta tag like the one above on your page tells the browser 
+          "don't render the content with a 980 pixel viewport — render it using the real device width instead, 
+          and set a default initial scale level for better consistency." 
+          The media queries will then kick in as expected.
+
+          There are a number of other options you can put inside the content attribute of the viewport meta tag 
+          — https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag.
+  -->
+  <meta name="viewport" content="width=device-width">
+  <!-- JS inclusion -->
+  <script src="cssLayoutMobileFirstApproach.js" defer></script>
+  <!-- CSS inclusion -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="cssLayoutMobileFirstApproach.css" media="screen" />
+</head>
+
+<body>
+
+  <div class="wrapper">
+
+    <header>
+      <div class="header-image-container">
+        <img class="header-image" src="header-image.jpg" alt="header image" />
+        <div class="header-image-caption header-image-center">
+          <h1>Mobile First Approach</h1>
+        </div>
+      </div>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="">About</a></li>
+        <li><a href="">Contact</a></li>
+        <li><a href="">Meet the team</a></li>
+        <li><a href="">Blog</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <article>
+        <div class="content">
+          <h1>Veggies!</h1>
+          <p>
+            Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi
+            welsh onion daikon amaranth tatsoi tomatillo melon azuki bean
+            garlic.
+          </p>
+
+          <p>
+            Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot
+            courgette tatsoi pea sprouts fava bean collard greens dandelion
+            okra wakame tomato. Dandelion cucumber earthnut pea peanut soko
+            zucchini.
+          </p>
+
+          <ul class="grid">
+            <li>
+              <h2><img class="img-list-style" src="list-style-image-alpha-24.png"/>  Card 1</h2>
+              <p>
+                Turnip greens yarrow ricebean rutabaga endive cauliflower sea
+                lettuce kohlrabi amaranth water spinach avocado daikon napa
+                cabbage asparagus winter purslane kale.
+              </p>
+            </li>
+            <li>
+              <h2><img class="img-list-style" src="list-style-image-alpha-24.png"/>  Card 2</h2>
+              <p>
+                Celery potato scallion desert raisin horseradish spinach
+                carrot soko.
+              </p>
+            </li>
+            <li>
+              <h2><img class="img-list-style" src="list-style-image-alpha-24.png"/>  Card 3</h2>
+              <p>
+                Lotus root water spinach fennel kombu maize bamboo shoot green
+                bean swiss chard seakale pumpkin onion chickpea gram corn pea.
+              </p>
+            </li>
+            <li>
+              <h2><img class="img-list-style" src="list-style-image-alpha-24.png"/>  Card 4</h2>
+              <p>
+                Brussels sprout coriander water chestnut gourd swiss chard
+                wakame kohlrabi beetroot carrot watercress.
+              </p>
+            </li>
+            <li>
+              <h2><img class="img-list-style" src="list-style-image-alpha-24.png"/>  Card 5</h2>
+              <p>
+                Corn amaranth salsify bunya nuts nori azuki bean chickweed
+                potato bell pepper artichoke.
+              </p>
+            </li>
+          </ul>
+        </div>
+        <aside class="related">
+          <p>
+            All these veggies are brought to you by the
+            <a href="https://veggieipsum.com/">Veggie Ipsum generator</a>.
+          </p>
+        </aside>
+      </article>
+
+      <aside class="sidebar">
+        <h2>External vegetable-based links</h2>
+        <ul>
+          <li>
+            <a href="https://www.thekitchn.com/how-to-cook-broccoli-5-ways-167323">How to cook broccoli</a>
+          </li>
+          <li>
+            <a href="https://www.bbcgoodfood.com/glossary/swiss-chard">Swiss Chard</a>
+          </li>
+          <li>
+            <a href="https://www.bbcgoodfood.com/recipes/collection/christmas-parsnip">Christmas Parsnip Recipes</a>
+          </li>
+        </ul>
+      </aside>
+    </main>
+
+    <footer>
+      <p>&copy;2019</p>
+    </footer>
+
+  </div>
+
+</body>
+
+</html>

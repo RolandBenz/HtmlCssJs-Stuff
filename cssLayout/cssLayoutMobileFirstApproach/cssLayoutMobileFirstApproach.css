@@ -1,0 +1,226 @@
+/*
+  MOBILE FIRST
+*/
+
+/*COMMON*/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 90%;
+  margin: 2em auto;
+  font: 1em/1.3 Arial, Helvetica, sans-serif;
+  background-color: #ffc;
+}
+
+.wrapper{
+  max-width:100%;
+  background-color: #ffe;
+}
+
+/*HEADER*/
+
+.header-image-container {
+  position: relative;
+  text-align: center;
+}
+
+.header-image-caption h1 {
+  font-size: calc(3vw + 1vh + 0.1em);
+  font-weight: bolder;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: rgb(255, 254, 238);
+}
+
+.header-image-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.header-image {
+  height: 25vw;
+  max-height: 100px; 
+  width: 100%;
+}
+
+/*NAVIGATION*/
+
+nav ul,
+aside ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: block;
+  padding: 10px;
+  margin: 0.2em;
+  background-color: rgba(207, 232, 220, 0.2);
+  border: 2px solid rgb(79, 185, 227);
+}
+
+/* 
+    a:link
+      unvisited link
+    a:visited
+      visited link
+    a:hover
+      mouse over link
+    a:active
+      selected link
+*/
+nav a:link,
+nav a:visited {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+nav a:hover {
+  background-color: rgba(207, 232, 220, 0.7);
+}
+
+/*MAIN*/
+
+main a:link,
+main a:visited {
+  color: #333;
+}
+
+article {
+  margin-bottom: 1em;
+}
+
+article div.content{
+  max-width:100%;
+  text-align:justify;
+  padding-left:10px;
+  padding-right:10px;
+}
+
+article .content ul.grid {
+  list-style-image: url('list-style-image-alpha-24.png');
+}
+
+article .content ul.grid h2 img.img-list-style {
+  display: none;
+}
+
+article aside.related {
+  background-color: rgba(79, 185, 227, 0.3);
+  border: 1px solid rgb(79, 185, 227);
+  padding: 10px;
+  margin-top: 20px;
+}
+
+aside.sidebar {
+  background-color: rgba(207, 232, 220, 0.5);
+  padding: 10px;
+}
+
+
+/*MEDIA
+    We'll use em, as this will mean that if the user has increased their text size, 
+    the breakpoint will happen at a similar line-length but wider viewport, 
+    than someone with a smaller text size.
+    - 40em * 16px = 640px
+*/
+
+@media screen and (min-width: 40em) {
+  /*
+    Navigation
+      - from display: block to flex
+      - flex:1 means equally sized li
+  */
+  nav ul {
+      display: flex;
+  }
+  nav li {
+      flex: 1;
+  }
+
+  /*
+    article contains
+      - div.content (3fr: gets 3/4 of width)
+      - aside.related (1fr: gets 1/4 of width)
+  */
+  article {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    column-gap: 20px;
+  }
+
+  article aside.related {
+    background-color: rgba(79, 227, 224, 0.3);
+    border: 1px solid rgb(79, 185, 227);
+    padding: 10px;
+    margin-top: 0px;
+  }
+}
+
+@media screen and (min-width: 20em) {
+  /*
+    article content
+      - display: grid; 
+      - creates cards
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      - minmax(min, max)
+      - minimum width of 150px
+      - maximum of 1fr
+      - above 300px+gap a second card is added and the card width again reduced to 130px
+      - above 450+gaps a third card ist added...
+    list-style:none;
+      - remove the bullet point or in this case here 
+        the list-style-image: url('list-style-image-alpha-24.png');
+  */
+
+  article .content ul.grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
+  article .content ul.grid h2 img.img-list-style {
+    display: inline;
+  }
+
+  article .content .grid li {
+    border: 1px solid #666;
+    padding: 10px;
+  }
+}
+
+
+@media screen and (min-width: 60em) {
+  /*
+    main contains
+      - article (3fr: gets 3/4 of with)
+        - article.div.content (3fr: gets 3/4 of width)
+        - article.aside.related (1fr: gets 1/4 of width)
+      - aside.sidebar (1fr: gets 1/4 of width)
+  */
+  
+  main {
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      column-gap: 20px;
+  }
+
+  article {
+      margin-bottom: 0;
+  }
+
+  footer {
+      border-top: 1px solid #ccc;
+      margin-top: 2em;
+  }
+}
+
+
