@@ -47,8 +47,12 @@ About javascript:
   https://stackoverflow.com/questions/18208694/javascript-set-elements-style-property#18208773
 
 
-About Sticky Nav:
-https://www.w3schools.com/howto/howto_js_navbar_sticky.asp
+About Position and Sticky Nav:
+https://developer.mozilla.org/en-US/docs/Web/CSS/position
+
+About Mobile first:
+https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Media_queries
+
 
 About Header:
   image

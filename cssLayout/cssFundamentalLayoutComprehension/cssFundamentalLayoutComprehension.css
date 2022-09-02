@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
+
+/*Body 
+    -has as default margin of 8px
+*/
+body {
+	background-color: #ffa;
+	color: #333;
+	margin: 0;
+	font: 1.2em / 1.2 Roboto, Arial, Helvetica, sans-serif;
+}
+
+/*Header*/
+.logo {
+	font-size: 200%;
+	padding: 50px 20px;
+	margin: 0 auto;
+	background-color: #ff1;
+  text-align: center;
+}
+
+/*Navigation*/
+nav {
+	background-color: #000;
+	padding: 0.5em;
+	top: 0;
+	position: sticky;
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: flex;
+	justify-content: space-between;
+}
+
+nav a {
+	color: #fff;
+	text-decoration: none;
+	padding: 0.5em 1em;
+}
+
+/*Main
+    display: grid;
+      - 3/4 for Article
+      - 1/4 for Aside
+*/
+.grid {
+	margin: 0 auto;
+	padding: 0 20px;
+	max-width: 90%;
+	display: grid;
+	grid-template-columns: 3fr 1fr;
+	gap: 40px;
+}
+
+/*Article
+  Image
+    float: left;
+    - image left and text is floating around
+  Text
+    text-align: justify;
+*/
+article p {
+  text-align: justify;
+}
+
+.feature {
+	width: 200px;
+	float: left;
+	margin: 0 20px 20px 0;
+}
+
+/*Aside
+    display:grid;
+      - 1/2 for images
+      - 1/2 for images
+*/
+.photos {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: grid;
+	row-gap: 10px;
+  column-gap: 2px;
+	grid-template-columns: 1fr 1fr;
+}
+
+.photos li {
+  max-height:71px;
+}
+
+img {
+	max-width: 100%;
+	display: block;
+}
+
+/*Footer*/
+FOOTER {
+	--footer-color: #777;
+	--footer-text-shadow-color: #ccc;
+	width: 90%;
+	margin: 2rem auto;
+	margin-bottom: 4rem;
+	text-align: right;
+	font-family: Georgia, serif;
+	font-size: 1.2em;
+	line-height: 1.4;
+	color: var(--footer-color);
+	text-shadow: 1px 1px 0 white, 2px 2px 0 var(--footer-text-shadow-color);
+}

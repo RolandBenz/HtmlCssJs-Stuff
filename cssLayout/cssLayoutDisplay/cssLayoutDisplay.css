@@ -23,6 +23,11 @@ HTML {
   font-family: "Roboto", "Open Sans", sans-serif;
 }
 
+BODY{
+  /*body has a default margin of 8px*/
+  margin: 0;
+}
+
 H1 {
   font-family: Georgia, serif;
   font-style: italic;
@@ -35,6 +40,25 @@ H1 {
   line-height: 2em;
   padding-bottom: 1rem;
   border-bottom: 1px solid var(--border-bottom-color);
+}
+
+FOOTER {
+  /* to center box with reduced width, use margin: auto*/
+  width: 80%;
+  margin: 8rem auto;
+  margin-bottom: 14rem;
+  text-align: right;
+  /* Font 
+      - familiy/style/size
+      - line-height: 1.4; == 1.4em, 1.4rem, 140%
+      - color
+      - text shadow
+  */
+  font-family: Georgia, serif;
+  font-size: 1.5em;
+  line-height: 1.4;
+  color: var(--footer-color);
+  text-shadow: 1px 1px 0 white, 2px 2px 0 var(--footer-text-shadow-color);
 }
 
 /*
@@ -200,6 +224,17 @@ div.center-sticky{
    */
   display: grid;
   align-content: center;
+}
+
+/*
+  11. Multi-column Layout
+    use one of the two properties
+      - column-width: 200px; 
+      - column-count: 3; 
+*/
+
+div.positioning.column-container{
+  column-count: 3;
 }
 
 /*
