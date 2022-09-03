@@ -1,10 +1,14 @@
+Git commit -m message:
+Tutorial from: https://css-tricks.com/clipping-masking-css/ and 
+
 CSS tricks:
   https://css-tricks.com/clipping-masking-css/
 
-CSS center boxes:
+Center boxes:
   https://www.freecodecamp.org/news/how-to-center-anything-with-css-align-a-div-text-and-more/
 
 About Flexbox display:flex (and old display:flexbox and even older display:box) 
+  https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox
   https://stackoverflow.com/questions/16280040/css3-flexbox-display-box-vs-flexbox-vs-flex
 
 About Flexbox alternatives:
@@ -15,26 +19,32 @@ About display:
   The display property is being used for showing, hiding, or positioning HTML elements in our layout. Every HTML element has a default display behavior and without understanding the logic behind it, you will have difficulties while working with CSS.
   There is also a newer option of the display property called flex, which we use for building Flexbox layouts, and flex also provides an easier way for positioning elements.
 
+About display:grid Grid Box Model;
+  https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Grids
+  https://codepen.io/miriamsuzanne/pen/JjPeQYP?editors=1000
+  https://developer.mozilla.org/en-US/docs/Web/CSS/grid
+  https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#question_mark
+
 About float:
   https://developer.mozilla.org/en-US/docs/Web/CSS/float
 
 Overview over display layouts:
-  Normal flow
-  - Normal flow is how the browser lays out HTML pages by default when you do nothing to control page layout.
-  The display property
-  - In addition to being able to change the default presentation by turning an item from block to inline 
-  and vice versa, there are some more involved layout methods that start out as a value of display. 
-  However, when using these you will generally need to invoke additional properties. 
-  The two values most important for our discussion of layout are display: flex and display: grid.
-  The position property
-  - Allows you to precisely control the placement of boxes inside other boxes. static positioning 
-  is the default in normal flow.
-  Floats 
-  - Applying a float value such as left can cause block-level elements to wrap along one side of an element, 
-  like the way images sometimes have text floating around them in magazine layouts.
-  Multi-column layout
-  - The Multi-column layout properties can cause the content of a block to layout in columns, 
-  as you might see in a newspaper.
+  - Normal flow
+    - Normal flow is how the browser lays out HTML pages by default when you do nothing to control page layout.
+  - The display property
+    - In addition to being able to change the default presentation by turning an item from block to inline 
+      and vice versa, there are some more involved layout methods that start out as a value of display. 
+      However, when using these you will generally need to invoke additional properties. 
+      The two values most important for our discussion of layout are display: flex and display: grid.
+  - The position property
+    - Allows you to precisely control the placement of boxes inside other boxes. static positioning 
+      is the default in normal flow.
+  - Floats 
+    - Applying a float value such as left can cause block-level elements to wrap along one side of an element, 
+      like the way images sometimes have text floating around them in magazine layouts.
+  - Multi-column layout
+    - The Multi-column layout properties can cause the content of a block to layout in columns, 
+      as you might see in a newspaper.
   https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Introduction
 
 About javascript:
@@ -48,19 +58,16 @@ About javascript:
 
 
 About Position and Sticky Nav:
-https://developer.mozilla.org/en-US/docs/Web/CSS/position
+  https://developer.mozilla.org/en-US/docs/Web/CSS/position
 
 About Mobile first:
-https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Media_queries
+  https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Media_queries
 
+About Viewport Meta Tag:
+  https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design#the_viewport_meta_tag
 
 About Header:
-  image
+  - image
     https://latsonprint.com/contact/attachment/design-header/
-  place text over image
+  - place text over image
     https://www.tutorialspoint.com/how-to-place-text-over-an-image-with-html-and-css
-
-
-
-Git commit -m message:
-Tutorial from: https://css-tricks.com/clipping-masking-css/ and 

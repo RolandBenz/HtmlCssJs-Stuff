@@ -66,6 +66,8 @@
           button2()
           container3()
           button3()
+          container4()
+          button4()
         }
       }
       /*container1()*/
@@ -89,21 +91,21 @@
         document.querySelector("div#container-1 button#button-box-width-small-1").onclick = function() {
           let box = document.querySelectorAll("div#container-1 div.box")
           box.forEach(function (item) {
-            //set width of item to 100%
+            //set width of item to 30%
             item.style.width="30%";
           })
         }
         document.querySelector("div#container-1 button#button-box-width-medium-1").onclick = function() {
           let box = document.querySelectorAll("div#container-1 div.box")
           box.forEach(function (item) {
-            //set width of item to 100%
+            //set width of item to 50%
             item.style.width="50%";
           })
         }
         document.querySelector("div#container-1 button#button-box-width-large-1").onclick = function() {
           let box = document.querySelectorAll("div#container-1 div.box")
           box.forEach(function (item) {
-            //set width of item to 100%
+            //set width of item to 80%
             item.style.width="80%";
           })
         };
@@ -256,21 +258,21 @@
         document.querySelector("div#container-2 button#button-box-width-small-2").onclick = function() {
           let box = document.querySelectorAll("div#container-2 div.box")
           box.forEach(function (item) {
-            //set width of item to 100%
+            //set width of item to 30%
             item.style.width="30%";
           })
         }
         document.querySelector("div#container-2 button#button-box-width-medium-2").onclick = function() {
           let box = document.querySelectorAll("div#container-2 div.box")
           box.forEach(function (item) {
-            //set width of item to 100%
+            //set width of item to 50%
             item.style.width="50%";
           })
         }
         document.querySelector("div#container-2 button#button-box-width-large-2").onclick = function() {
           let box = document.querySelectorAll("div#container-2 div.box")
           box.forEach(function (item) {
-            //set width of item to 100%
+            //set width of item to 80%
             item.style.width="80%";
           })
         };
@@ -423,21 +425,21 @@
         document.querySelector("div#container-3 button#button-box-width-small-3").onclick = function() {
           let box = document.querySelectorAll("div#container-3 div.box")
           box.forEach(function (item) {
-            //set width of item to 100%
+            //set width of item to 30%
             item.style.width="30%";
           })
         }
         document.querySelector("div#container-3 button#button-box-width-medium-3").onclick = function() {
           let box = document.querySelectorAll("div#container-3 div.box")
           box.forEach(function (item) {
-            //set width of item to 100%
+            //set width of item to 50%
             item.style.width="50%";
           })
         }
         document.querySelector("div#container-3 button#button-box-width-large-3").onclick = function() {
           let box = document.querySelectorAll("div#container-3 div.box")
           box.forEach(function (item) {
-            //set width of item to 100%
+            //set width of item to 80%
             item.style.width="80%";
           })
         };
@@ -447,117 +449,195 @@
     </script>
 
 
-    <h2>Subboxes with Grid</h2>
+    <h2>Container with Grid, Boxes with Flex</h2>
     <div class="container" id="container-4">
-      <div class="box" id="box-1">
-        <div class="childbox childbox-1">Green</div>
-        <div class="childbox childbox-2">Blue</div>
-        <div class="childbox childbox-3">Red</div>
-        <div class="childbox childbox-4">Gray</div>
-        <div class="childbox childbox-5">Black</div>
-      </div>
-      <div class="box" id="box-2">
-        <div class="childbox childbox-1">Green</div>
-        <div class="childbox childbox-2">Blue</div>
-        <div class="childbox childbox-3">Red</div>
-        <div class="childbox childbox-4">Gray</div>
-        <div class="childbox childbox-5">Black</div>
-      </div>
-      <div class="box" id="box-3">
-        <div class="childbox childbox-1">Green</div>
-        <div class="childbox childbox-2">Blue</div>
-        <div class="childbox childbox-3">Red</div>
-        <div class="childbox childbox-4">Gray</div>
-        <div class="childbox childbox-5">Black</div>
-      </div>
-      <div class="box" id="box-4">
-        <div class="childbox childbox-1">Green</div>
-        <div class="childbox childbox-2">Blue</div>
-        <div class="childbox childbox-3">Red</div>
-        <div class="childbox childbox-4">Gray</div>
-        <div class="childbox childbox-5">Black</div>
-      </div>
-      <div class="box" id="box-5">
-        <div class="childbox childbox-1">Green</div>
-        <div class="childbox childbox-2">Blue</div>
-        <div class="childbox childbox-3">Red</div>
-        <div class="childbox childbox-4">Gray</div>
-        <div class="childbox childbox-5">Black</div>
-      </div>
-      <div class="box" id="box-6">
-        <div class="childbox childbox-1">Green</div>
-        <div class="childbox childbox-2">Blue</div>
-        <div class="childbox childbox-3">Red</div>
-        <div class="childbox childbox-4">Gray</div>
-        <div class="childbox childbox-5">Black</div>
-      </div>
-      <div class="box" id="box-7">
-        <div class="childbox childbox-1">Green</div>
-        <div class="childbox childbox-2">Blue</div>
-        <div class="childbox childbox-3">Red</div>
-        <div class="childbox childbox-4">Gray</div>
-        <div class="childbox childbox-5">Black</div>
-      </div>
-      <div class="box" id="box-8">
-        <div class="childbox childbox-1">Green</div>
-        <div class="childbox childbox-2">Blue</div>
-        <div class="childbox childbox-3">Red</div>
-        <div class="childbox childbox-4">Gray</div>
-        <div class="childbox childbox-5">Black</div>
-      </div>
-      <div class="box" id="box-9">
-        <div class="childbox childbox-1">Green</div>
-        <div class="childbox childbox-2">Blue</div>
-        <div class="childbox childbox-3">Red</div>
-        <div class="childbox childbox-4">Gray</div>
-        <div class="childbox childbox-5">Black</div>
+      <div class="grid-4" id="grid-4">
+        <div class="box" id="box-1">
+          <div class="childbox childbox-1">Green</div>
+          <div class="childbox childbox-2">Blue</div>
+          <div class="childbox childbox-3">Red</div>
+          <div class="childbox childbox-4">Gray</div>
+          <div class="childbox childbox-5">Black</div>
+        </div>
+        <div class="box" id="box-2">
+          <div class="childbox childbox-1">Green</div>
+          <div class="childbox childbox-2">Blue</div>
+          <div class="childbox childbox-3">Red</div>
+          <div class="childbox childbox-4">Gray</div>
+          <div class="childbox childbox-5">Black</div>
+        </div>
+        <div class="box" id="box-3">
+          <div class="childbox childbox-1">Green</div>
+          <div class="childbox childbox-2">Blue</div>
+          <div class="childbox childbox-3">Red</div>
+          <div class="childbox childbox-4">Gray</div>
+          <div class="childbox childbox-5">Black</div>
+        </div>
+        <div class="box" id="box-4">
+          <div class="childbox childbox-1">Green</div>
+          <div class="childbox childbox-2">Blue</div>
+          <div class="childbox childbox-3">Red</div>
+          <div class="childbox childbox-4">Gray</div>
+          <div class="childbox childbox-5">Black</div>
+        </div>
+        <div class="box" id="box-5">
+          <div class="childbox childbox-1">Green</div>
+          <div class="childbox childbox-2">Blue</div>
+          <div class="childbox childbox-3">Red</div>
+          <div class="childbox childbox-4">Gray</div>
+          <div class="childbox childbox-5">Black</div>
+        </div>
+        <div class="box" id="box-6">
+          <div class="childbox childbox-1">Green</div>
+          <div class="childbox childbox-2">Blue</div>
+          <div class="childbox childbox-3">Red</div>
+          <div class="childbox childbox-4">Gray</div>
+          <div class="childbox childbox-5">Black</div>
+        </div>
+        <div class="box" id="box-7">
+          <div class="childbox childbox-1">Green</div>
+          <div class="childbox childbox-2">Blue</div>
+          <div class="childbox childbox-3">Red</div>
+          <div class="childbox childbox-4">Gray</div>
+          <div class="childbox childbox-5">Black</div>
+        </div>
+        <div class="box" id="box-8">
+          <div class="childbox childbox-1">Green</div>
+          <div class="childbox childbox-2">Blue</div>
+          <div class="childbox childbox-3">Red</div>
+          <div class="childbox childbox-4">Gray</div>
+          <div class="childbox childbox-5">Black</div>
+        </div>
+        <div class="box" id="box-9">
+          <div class="childbox childbox-1">Green</div>
+          <div class="childbox childbox-2">Blue</div>
+          <div class="childbox childbox-3">Red</div>
+          <div class="childbox childbox-4">Gray</div>
+          <div class="childbox childbox-5">Black</div>
+        </div>
+        <div class="box" id="box-10">
+          <button class="button button-box-width-small" id="button-box-width-small-4">small box width</button>
+          <button class="button button-box-width-medium" id="button-box-width-medium-4">medium box width</button>
+          <button class="button button-box-width-large" id="button-box-width-large-4">large box width</button>
+        </div>
       </div>
     </div>
+    <script>
+      console.time("container-4 time1");
+      console.timeEnd("container-4 time1");
+      /*container3()*/
+      function container4() {
+        let box = document.querySelectorAll("div#container-4 div.box")
+        box.forEach(function (item) {
+          if (item.id !== "box-10") {
+            let istyle = getComputedStyle(item).display
+            let istyle1 = getComputedStyle(item).justifyContent
+            let istyle2= getComputedStyle(item).flexFlow
+          /*
+              - first way to do it, with existing node
+                  let child = item.querySelector("p")
+                  child.innerHTML = `<b>justify-content: ${istyle1}</b>`
+              - second way to do it, with newly created node
+                  let child1 = document.createElement("p")
+                  child1.innerHTML = `<b>display: ${istyle}</b>`
+                  item.insertBefore(child1, item.firstChild);
+              - third way to do it, by replacing whole html of item
+                  item.innerHTML = `<p><b>display: ${istyle}</b></p>
+                    <p><b>justify-content: ${istyle1}</b></p>` +
+                    item.innerHTML
+            */
+            item.innerHTML = `<p><b>display: ${istyle}</b><br/>
+              <b>justify-content: ${istyle1}</b><br/>
+              <b>flex-flow: ${istyle2}</b></p>` +
+              item.innerHTML        
+            //set width of p to 100%
+            let children = item.querySelectorAll("p")
+            children.forEach(function(item){
+              item.style.width="100%"
+              item.style.lineHeight="1.4rem"
+              item.style.color="darkgreen"
+              //add css class
+              //https://stackoverflow.com/questions/35630641/apply-css-dynamically-with-javascript
+              if (item.parentNode.id === "box-1") {
+                item.classList.add('js_box-1_p') 
+              }
+              else if (item.parentNode.id === "box-2") {
+                item.classList.add('js_box-2_p') 
+              }            
+              else if (item.parentNode.id === "box-3") {
+                item.classList.add('js_box-3_p') 
+              }
+              else if (item.parentNode.id === "box-4") {
+                item.classList.add('js_box-4_p') 
+              }
+              else if (item.parentNode.id === "box-5") {
+                item.classList.add('js_box-5_p') 
+              }
+              else if (item.parentNode.id === "box-6") {
+                item.classList.add('js_box-6_p') 
+              }
+              else if (item.parentNode.id === "box-7") {
+                item.classList.add('js_box-7_p') 
+              }
+              else if (item.parentNode.id === "box-8") {
+                item.classList.add('js_box-8_p') 
+              }
+              else if (item.parentNode.id === "box-9") {
+                item.classList.add('js_box-9_p') 
+              }
+            })
+          }
+        })
+      }
+      /*button4 event listeners*/
+      function button4(){
+        document.querySelector("div#container-4 button#button-box-width-small-4").onclick = function() {
+          //let box = document.querySelectorAll("div#container-4 div.box")
+          let grid = document.querySelectorAll("div#container-4 div.grid-4")
+          grid.forEach(function (item) {
+            //set width of item to 60%
+            item.style.width="60%";
+          })
+        }
+        document.querySelector("div#container-4 button#button-box-width-medium-4").onclick = function() {
+          //let box = document.querySelectorAll("div#container-4 div.box")
+          let grid = document.querySelectorAll("div#container-4 div.grid-4")
+          grid.forEach(function (item) {
+            //set width of item to 80%
+            item.style.width="80%";
+          })
+        }
+        document.querySelector("div#container-4 button#button-box-width-large-4").onclick = function() {
+          //let box = document.querySelectorAll("div#container-4 div.box")
+          let grid = document.querySelectorAll("div#container-4 div.grid-4")
+          grid.forEach(function (item) {
+            //set width of item to 100%
+            item.style.width="100%";
+          })
+        };
+      }   
+      console.time("container-4 time2");
+      console.timeEnd("container-4 time2");
+    </script>
 
 
     <h2>Subboxes with Floats</h2>
     <div class="container" id="container-5">
       <div class="box" id="box-1">
+        
+        </p>
         <div class="childbox childbox-1">Green</div>
         <div class="childbox childbox-2">Blue</div>
+        <p>As much mud in the streets as if the waters had but newly retired from the face of the earth, 
+          and it would not be wonderful to meet a Megalosaurus, forty feet long or so, 
+          waddling like an elephantine lizard up Holborn Hill... 
         <div class="childbox childbox-3">Red</div>
         <div class="childbox childbox-4">Gray</div>
-        <div class="childbox childbox-5">Black</div>
-      </div>
-      <div class="box" id="box-2">
-        <div class="childbox childbox-1">Green</div>
-        <div class="childbox childbox-2">Blue</div>
-        <div class="childbox childbox-3">Red</div>
-        <div class="childbox childbox-4">Gray</div>
-        <div class="childbox childbox-5">Black</div>
-      </div>
-      <div class="box" id="box-3">
-        <div class="childbox childbox-1">Green</div>
-        <div class="childbox childbox-2">Blue</div>
-        <div class="childbox childbox-3">Red</div>
-        <div class="childbox childbox-4">Gray</div>
-        <div class="childbox childbox-5">Black</div>
-      </div>
-      <div class="box" id="box-4">
-        <div class="childbox childbox-1">Green</div>
-        <div class="childbox childbox-2">Blue</div>
-        <div class="childbox childbox-3">Red</div>
-        <div class="childbox childbox-4">Gray</div>
-        <div class="childbox childbox-5">Black</div>
-      </div>
-      <div class="box" id="box-5">
-        <div class="childbox childbox-1">Green</div>
-        <div class="childbox childbox-2">Blue</div>
-        <div class="childbox childbox-3">Red</div>
-        <div class="childbox childbox-4">Gray</div>
-        <div class="childbox childbox-5">Black</div>
-      </div>
-      <div class="box" id="box-6">
-        <div class="childbox childbox-1">Green</div>
-        <div class="childbox childbox-2">Blue</div>
-        <div class="childbox childbox-3">Red</div>
-        <div class="childbox childbox-4">Gray</div>
-        <div class="childbox childbox-5">Black</div>
+        <div class="childbox childbox-5">Yellow</div>
+        <p>And as much mud in the streets as if the waters had but newly retired from the face of the earth, 
+          and it would not be wonderful to meet a Megalosaurus, forty feet long or so, 
+          waddling like an elephantine lizard up Holborn Hill. 
+        </p>
       </div>
     </div>
    

@@ -1,0 +1,66 @@
+/*1. An alternative way to arrange items on your grid: 
+      - The grid CSS property is a shorthand property 
+        that sets all of the explicit and implicit grid properties in a single declaration.   
+          - grid-auto-columns
+          - grid-auto-flow
+          - grid-auto-rows
+          - grid-template-areas
+          - grid-template-columns
+          - grid-template-rows
+      - grid property syntax
+          - https://developer.mozilla.org/en-US/docs/Web/CSS/grid
+            https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#question_mark
+          - grid = 
+            <'grid-template'> 
+            <'grid-template-rows'> / [ auto-flow && dense? ] <'grid-auto-columns'>?
+            |
+            [ auto-flow && dense? ] <'grid-auto-rows'>? / <'grid-template-columns'>  
+          - data type of grid-template
+            can have the form: grid-template-rows/...
+            or the form: .../grid-template-columns
+      - grid: repeat(3, 60px) / auto-flow 80px;
+          - 3 rows, each with height=60px / x columns, each width=80px
+      - training game
+        https://cssgridgarden.com/
+*/
+body {
+  min-height: 95vh;
+  display: grid;
+  grid-gap: 0.3em;
+  background: #dcffb2;
+  /*
+    mobile first for small screens: 
+    4 rows 
+    / 1 column 
+  */
+  grid: 'header' auto
+        'nav' auto
+        'main' 1fr
+        'footer' auto
+        / 1fr; 
+}
+header { grid-area: header; background: #f5fc62 !important;}
+nav { grid-area: nav; }
+main { grid-area: main; }
+footer { grid-area: footer; }
+/*2. used to overpaint and show the grid-gap 
+in the body background-color*/
+.grid-item {
+  background: rgb(255, 252, 173);
+  padding: 10px;
+}
+/*3. media for better responsiveness*/
+@media (min-width: 40em) {
+  body {
+    /*mobile first rule for wider screens: 
+        3 rows 
+        / 2 column 
+    */
+    grid: 'header header' auto
+          'nav main' 1fr
+          'nav footer' auto
+          / 10em 1fr;
+  }
+}
+
+

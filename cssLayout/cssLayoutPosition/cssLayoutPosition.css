@@ -514,59 +514,140 @@ FOOTER {
 
 /* 4. Boxes of Container-4
   ------------------------------------------- */
+  #grid-4 .box {
+    width:100%
+  }
+  #grid-4{
+    /*do it here, remove it from box*/
+    width:80%;
+    margin: 0 auto;
+    /*Grid*/
+    display: grid;
+    gap: 8px;
+    /*
+      mobile first for small screens: 
+      4 rows 
+      / 1 column 
+    */
+    grid: 'container-4-box-1' 1fr
+          'container-4-box-2' auto
+          'container-4-box-3' auto
+          'container-4-box-4' auto
+          'container-4-box-5' auto
+          'container-4-box-6' auto
+          'container-4-box-7' auto
+          'container-4-box-8' auto
+          'container-4-box-9' auto
+          'container-4-box-10' auto
+          / 1fr; 
+}
+@media (min-width: 50em) {
+  #grid-4 {
+    /*mobile first rule for wider screens: 
+        3 rows 
+        / 2 column 
+    */
+    grid: 'container-4-box-1 container-4-box-2 container-4-box-3' 1fr
+          'container-4-box-4 container-4-box-5 container-4-box-6' auto
+          'container-4-box-7 container-4-box-8 container-4-box-9' auto
+          'container-4-box-10 container-4-box-10 container-4-box-10' auto
+          / 1fr 1fr 1fr;
+  }
+}
 
 #container-4 #box-1 {
+  /* Grid area */
+  grid-area: container-4-box-1;
   /* Center children horizontally*/
   display: flex;
   justify-content: start;
+  /*align as rows and wrap*/
+  flex-flow: row wrap; 
 }
 
 #container-4 #box-2 {
+  /* Grid area */
+  grid-area: container-4-box-2;
   /* Center children horizontally*/
   display: flex;
   justify-content: end;
+  /*align as rows and wrap*/
+  flex-flow: row wrap; 
 }
 
 #container-4 #box-3 {
+  /* Grid area */
+  grid-area: container-4-box-3; 
   /* Center children horizontally*/
   display: flex;
   justify-content: left;
+  /*align as rows and wrap*/
+  flex-flow: row wrap;
 }
 
 #container-4 #box-4 {
+  /* Grid area */
+  grid-area: container-4-box-4;
   /* Center children horizontally*/
   display: flex;
   justify-content: right;
+  /*align as rows and wrap*/
+  flex-flow: row wrap; 
 }
 
 #container-4 #box-5 {
+  /* Grid area */
+  grid-area: container-4-box-5;
   /* Center children horizontally*/
   display: flex;
   justify-content: center;
+  /*align as rows and wrap*/
+  flex-flow: row wrap; 
 }
 
 #container-4 #box-6 {
+  /* Grid area */
+  grid-area: container-4-box-6; 
   /* Center children horizontally*/
   display: flex;
   justify-content: stretch;
+  /*align as rows and wrap*/
+  flex-flow: row wrap;
 }
 
 #container-4 #box-7 {
+  /* Grid area */
+  grid-area: container-4-box-7; 
   /* Center children horizontally*/
   display: flex;
   justify-content: space-around;
+  /*align as rows and wrap*/
+  flex-flow: row wrap;
 }
 
 #container-4 #box-8 {
+  /* Grid area */
+  grid-area: container-4-box-8; 
   /* Center children horizontally*/
   display: flex;
   justify-content: space-between;
+  /*align as rows and wrap*/
+  flex-flow: row wrap;
 }
 
 #container-4 #box-9 {
+  /* Grid area */
+  grid-area: container-4-box-9; 
   /* Center children horizontally*/
   display: flex;
   justify-content: space-evenly;
+  /*align as rows and wrap*/
+  flex-flow: row wrap;
+}
+
+#container-4 #box-10 {
+  /* Grid area */
+  grid-area: container-4-box-10; 
 }
 
 /* 4.1 Children of container-4
@@ -605,66 +686,52 @@ FOOTER {
 
 #container-5 #box-1 {
   /* Center children horizontally*/
-  display: flex;
-  justify-content: center;
-}
-
-#container-5 #box-2 {
-  /* Center children horizontally*/
-  display: flex;
-  justify-content: center;
-}
-
-#container-5 #box-3 {
-  /* Center children horizontally*/
-  display: flex;
-  justify-content: center;
-}
-
-#container-5 #box-4 {
-  /* Center children horizontally*/
-  display: flex;
-  justify-content: center;
-}
-
-#container-5 #box-5 {
-  /* Center children horizontally*/
-  display: flex;
-  justify-content: center;
-}
-
-#container-5 #box-6 {
-  /* Center children horizontally*/
-  display: flex;
   justify-content: center;
 }
 
 /* 5.1 Children of container-5
   ------------------------------------------- */
 #container-5 .childbox {
-  /* center text */
+  /*horizontal*/
   text-align: center;
+  /*vertical, 
+    - with display:grid or display:flex
+    - with align-content:center or align-items:center
+   */
+  display: grid;
+  align-content: center;
   /* min-width and max-width*/
-  min-width: 80px;
-  max-width: 15%;
+  min-width: 180px;
+  /*min-height and max-height*/
+  min-height: 100px;
 }
 
 #container-5 .childbox-1 {
   background-color: green;
+  /**/
+  float: inline-end;
 }
 
 #container-5 .childbox-2 {
   background-color: blue;
+   /**/
+   float: left;
 }
 
 #container-5 .childbox-3 {
   background-color: red;
+   /**/
+   float: inline-start;
 }
 
 #container-5 .childbox-4 {
   background-color: gray;
+   /**/
+   float: inline-end;
 }
 
 #container-5 .childbox-5 {
   background-color: yellow;
+   /**/
+   float: right;
 }
