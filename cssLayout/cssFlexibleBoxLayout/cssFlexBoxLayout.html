@@ -10,24 +10,94 @@
       }
       body {
         margin: 0;
+        background: rgb(134, 255, 146);
       }
       header {
-        background: purple;
+        background: rgb(88, 220, 102);
         height: 100px;
       }
       h1 {
         text-align: center;
-        color: white;
+        color: rgb(143, 55, 55);
         line-height: 100px;
         margin: 0;
       }
       article {
         padding: 10px;
         margin: 10px;
-        background: aqua;
+        background: rgb(247, 252, 186);
       }
       /* Add your flexbox CSS below here */
-
+      section {
+        /*1. section tag becomes a flex-container*/
+        display: flex;
+        /*2. Change flex-direction, default is row
+             - This puts the items back in a column layout, 
+               much like they were before we added any CSS.
+        */
+        /**** flex-direction: column;
+        /*3. Change flex-direction to default*/
+        /**replaced by 5.** flex-direction: row;
+        /*4.1 Change flex-wrap to none default
+              - This prevents an overflow
+              - But now article tag needs a flexible width
+                or you end up with blocks as in flex-direction: column;
+        */
+        /**replaced by 5.** flex-wrap: wrap;
+        /*5.1 shorthand for flex-direction and flex-wrap*/
+        flex-flow: row wrap;
+      }
+      article{
+        /*4.2 and 5.2 IMPORTANT MAGIC for children of flex-container
+              - each will be at least 200px wide
+              - use it together with flex-wrap: wrap in flex-container
+              - We now have multiple rows. 
+                Each row has as many flexbox children fitted into it as is sensible. 
+                Any overflow is moved down to the next line.
+              Desired or undesired effect:
+              - With 12 articles everything seems perfect for 1 to 4 articles on a row
+                But with 5 articles, the last row gets only two articles
+                which span the whole column
+        */
+        /**replaced by 6.** flex: 200px;
+        /*6. IMPORTANT MAGIC for children of flex-container
+              - This is a unitless proportion value that dictates how much available space
+                along the main axis each flex item will take up compared to other flex items. 
+                In this case, we're giving each <article> element the same value (a value of 1), 
+                which means they'll all take up an equal amount of the spare space left after 
+                properties like padding and margin have been set.
+              - Any other positive integer would have the same effect
+        */
+        /**replaced by 8.** flex: 1;
+        /*8.1 set flex width with minimum value
+              - This basically states, 
+                "Each flex item will first be given 200px of the available space. 
+                After that, the rest of the available space will be shared according to the proportion units."
+              - shorthand / longhand                
+                flex: flex-grow flex-basis;
+                flex: flex-grow flex-shrink flex-basis;
+                  - flex-grow: unitless proportion value
+                  - flex-basis: minimum width or size
+                  - flex-shrink: comes into play when the flex items are overflowing their container. 
+                  - This value specifies how much an item will shrink in order to prevent overflow. 
+        */
+        flex: 1 200px;
+      }
+      article:nth-of-type(12) {
+        /*7. Change properties of an element
+            - relative min width
+            - does only seem to work reliably with elements on the last row
+            - the last element now gets double the width of its siblings on the same row
+              those rows before use up the space to given internal rules
+        */
+        /**replaced by 9.** flex: 2;
+        /*8.2 set flex width with minimum value
+            - with the change in 8.1, rule 7 is no longer reliable
+            - therefore also add a minimum width
+        */
+        flex: 2 200px;
+      }
+      
     </style>
   </head>
 
@@ -46,6 +116,45 @@
       </article>
       <article>
         <h2>Third article</h2>
+        <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
+        <p>Cray food truck brunch, XOXO +1 keffiyeh pickled chambray waistcoat ennui. Organic small batch paleo 8-bit. Intelligentsia umami wayfarers pickled, asymmetrical kombucha letterpress kitsch leggings cold-pressed squid chartreuse put a bird on it. Listicle pickled man bun cornhole heirloom art party.</p>
+      </article>
+      <article>
+        <h2>Fourth article</h2>
+        <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
+      </article>
+      <article>
+        <h2>Fifth article</h2>
+        <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
+      </article>
+      <article>
+        <h2>Sixth article</h2>
+        <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
+        <p>Cray food truck brunch, XOXO +1 keffiyeh pickled chambray waistcoat ennui. Organic small batch paleo 8-bit. Intelligentsia umami wayfarers pickled, asymmetrical kombucha letterpress kitsch leggings cold-pressed squid chartreuse put a bird on it. Listicle pickled man bun cornhole heirloom art party.</p>
+      </article>
+      <article>
+        <h2>Seventh article</h2>
+        <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
+      </article>
+      <article>
+        <h2>Eighth article</h2>
+        <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
+      </article>
+      <article>
+        <h2>Ninth article</h2>
+        <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
+        <p>Cray food truck brunch, XOXO +1 keffiyeh pickled chambray waistcoat ennui. Organic small batch paleo 8-bit. Intelligentsia umami wayfarers pickled, asymmetrical kombucha letterpress kitsch leggings cold-pressed squid chartreuse put a bird on it. Listicle pickled man bun cornhole heirloom art party.</p>
+      </article>
+      <article>
+        <h2>Tenth article</h2>
+        <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
+      </article>
+      <article>
+        <h2>Eleventh article</h2>
+        <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
+      </article>
+      <article>
+        <h2>Twelfth article</h2>
         <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
         <p>Cray food truck brunch, XOXO +1 keffiyeh pickled chambray waistcoat ennui. Organic small batch paleo 8-bit. Intelligentsia umami wayfarers pickled, asymmetrical kombucha letterpress kitsch leggings cold-pressed squid chartreuse put a bird on it. Listicle pickled man bun cornhole heirloom art party.</p>
       </article>

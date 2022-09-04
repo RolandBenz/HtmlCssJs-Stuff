@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Complex flexbox example</title>
+  <style>
+    html {
+      font-family: sans-serif;
+    }
+    body {
+      margin: 0;
+    }
+    header {
+      background: purple;
+      height: 100px;
+    }
+    h1 {
+      text-align: center;
+      color: white;
+      line-height: 100px;
+      margin: 0;
+    }
+    article {
+      padding: 10px;
+      margin: 10px;
+      background: aqua;
+    }
+    /* Add your flexbox CSS below here */
+    section {
+      /*1.*/
+      display: flex;
+    }
+    article {
+      /*2.*/
+      flex: 1 200px;
+    }
+    article:nth-of-type(3) {
+      /*3. 
+          - we're setting the third <article> to have its children laid out like flex items too, 
+            but this time we're laying them out like a column.
+      */
+      flex: 3 200px;
+      display: flex;
+      flex-flow: column;
+    }
+    article:nth-of-type(3) div:first-child {
+      /*4.
+          - of the 3rd article, the first div 
+          - give the div minimum height of 100px
+          - div contains five buttons
+            - its children are laid out like flex items too
+            - with flow: row wrap
+            - center aligned vertically
+            - space around justified horizontally 
+              which doesn't seem to have any effect
+              probalbly because of button property flex: 1 auto
+      */
+      flex: 1 100px;
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      justify-content: space-around;
+    }
+    button {
+      /*5.
+          - giving the buttons a flex value of 1 auto. 
+            - The buttons will take up as much space as they can. 
+              As many will fit on a line as is comfortable; 
+              beyond that, they'll drop to a new line.
+      */
+      flex: 1 auto;
+      margin: 5px;
+      font-size: 18px;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Complex flexbox example</h1>
+  </header>
+
+  <section>
+    <article>
+      <h2>First article</h2>
+      <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry
+        vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid
+        single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health
+        goth gastropub hammock.</p>
+    </article>
+    <article>
+      <h2>Second article</h2>
+      <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry
+        vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid
+        single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health
+        goth gastropub hammock.</p>
+    </article>
+    <article>
+      <div>
+        <button>Smile</button>
+        <button>Laugh</button>
+        <button>Wink</button>
+        <button>Shrug</button>
+        <button>Blush</button>
+      </div>
+      <div>
+        <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry
+          vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid
+          single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health
+          goth gastropub hammock.</p>
+      </div>
+      <div>
+        <p>Cray food truck brunch, XOXO +1 keffiyeh pickled chambray waistcoat ennui. Organic small batch paleo 8-bit.
+          Intelligentsia umami wayfarers pickled, asymmetrical kombucha letterpress kitsch leggings cold-pressed squid
+          chartreuse put a bird on it. Listicle pickled man bun cornhole heirloom art party.</p>
+      </div>
+    </article>
+  </section>
+</body>
+
+</html>

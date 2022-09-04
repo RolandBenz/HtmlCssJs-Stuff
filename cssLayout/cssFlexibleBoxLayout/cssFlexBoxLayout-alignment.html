@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Flexbox align 0 — starting code</title>
+  <style>
+    html {
+      font-family: sans-serif;
+    }
+    body {
+      width: 70%;
+      max-width: 960px;
+      margin: 20px auto;
+    }
+    button {
+      font-size: 18px;
+      line-height: 1.5;
+      width: 15%;
+    }
+    div {
+      height: 100px;
+      border: 1px solid black;
+    }
+    /* Add your flexbox CSS below here */
+    div {
+      /*1. Align the buttons nicely centered horizontally and vertically
+          - align-items: center; 
+            - controls wher the flex items sit on the cross axis (height)
+            - its children don't fill out the whole hight anymore (delault align-items: stretch)
+          - justify-content 
+            - controls where the flex items sit on the main axis (width)
+          - justify-items 
+            - this property is IGNORED in flexbox layouts (it is a grid layout property)
+      */
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+    /*there are also pseudo classes like nth-child(An+B)*/
+    button:nth-child(2n+1) {
+      /*2. override the align-items behavior for individual flex items 
+           by applying the align-self property to them*/
+      align-self: flex-end;
+    }
+    button:last-child {
+      /*3. ordering
+          - by default all items have order == 0
+          - Flex items with higher specified order values will appear 
+            later in the display order than items with lower order values.
+          - a lower order of -1 sets it in front of all others with order 0
+      */
+      order: -1;
+    }    
+    
+  </style>
+</head>
+
+<body>
+  <div>
+    <button>Smile</button>
+    <button>Laugh</button>
+    <button>Wink</button>
+    <button>Shrug</button>
+    <button>Blush</button>
+  </div>
+</body>
+
+</html>

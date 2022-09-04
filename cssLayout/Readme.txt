@@ -1,5 +1,5 @@
 Git commit -m message:
-Tutorial from: https://css-tricks.com/clipping-masking-css/ and 
+Tutorial from: https://css-tricks.com/clipping-masking-css/ and https://www.freecodecamp.org/news/how-to-center-anything-with-css-align-a-div-text-and-more/ and https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox and https://css-tricks.com/snippets/css/a-guide-to-flexbox/ and https://stackoverflow.com/questions/16280040/css3-flexbox-display-box-vs-flexbox-vs-flex and https://kyusuf.com/post/almost-complete-guide-to-flexbox-without-flexbox/ and https://blog.devgenius.io/css-display-flex-vs-block-inline-and-inline-block-explained-5fa588a3a960 and https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Grids and https://codepen.io/miriamsuzanne/pen/JjPeQYP?editors=1000 and https://developer.mozilla.org/en-US/docs/Web/CSS/grid and https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#question_mark and https://developer.mozilla.org/en-US/docs/Web/CSS/float and https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Introduction and https://developer.mozilla.org/en-US/docs/Web/API/Document/readystatechange_event and https://stackoverflow.com/questions/807878/how-to-make-javascript-execute-after-page-load and https://stackoverflow.com/questions/20377835/how-to-get-css-class-property-in-javascript and https://stackoverflow.com/questions/26126392/javascript-how-to-get-html-styles-custom-attribute-value and https://stackoverflow.com/questions/734041/how-to-add-paragraph-on-top-of-div-content and https://stackoverflow.com/questions/35630641/apply-css-dynamically-with-javascript and https://stackoverflow.com/questions/18208694/javascript-set-elements-style-property#18208773   and https://developer.mozilla.org/en-US/docs/Web/CSS/position and https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Media_queries and https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design#the_viewport_meta_tag and https://latsonprint.com/contact/attachment/design-header/ and https://www.tutorialspoint.com/how-to-place-text-over-an-image-with-html-and-css
 
 CSS tricks:
   https://css-tricks.com/clipping-masking-css/
@@ -9,6 +9,7 @@ Center boxes:
 
 About Flexbox display:flex (and old display:flexbox and even older display:box) 
   https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox
+  https://css-tricks.com/snippets/css/a-guide-to-flexbox/
   https://stackoverflow.com/questions/16280040/css3-flexbox-display-box-vs-flexbox-vs-flex
 
 About Flexbox alternatives:
